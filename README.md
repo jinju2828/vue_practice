@@ -30,6 +30,7 @@ https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2
 ### ESLint
 
 ECMAScript Lint라고 불리는 정적 분석 도구를 프로젝트 설치할 때 기본적으로 Enter만 누르다보면 같이 설치되게 되어있는데, 문법에 대해 일관성을 보장해주게 된다.   
+   
 Example 1 )    
    
 mounted () {
