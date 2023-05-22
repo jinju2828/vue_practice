@@ -2,8 +2,8 @@
 
 ### 기초 세팅 방법
 
-Node.js 설치 후 Command 에서 node -v 실행
-npm install vue
+Node.js 설치 후 Command 에서 node -v 실행 '''
+npm install vue   
 npm vue -v로 확인
 npm install -g @vue/cli c
 npm i -g @vue/cli-init
