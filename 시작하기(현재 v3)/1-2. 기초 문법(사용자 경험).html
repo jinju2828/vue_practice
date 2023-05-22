@@ -1,0 +1,30 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="app2" v-cloak>{{ message }}</div>
+
+
+<script type="module">
+  import { createApp } from 'vue'
+
+const app2 = createApp({
+    data() {
+      return {
+        message: 'Hello Vue in app2!'
+      }
+    }
+  })
+  
+  app2.mount('#app2')
+</script>
+
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
