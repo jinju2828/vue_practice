@@ -27,4 +27,14 @@ https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2
 1. Vue 버전 2에는 제한된 typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
 2. Vue.js v3 버전은 Vue.js v2 버전과 호환성이 없기 때문에, Vue.js v2 코드를 Vue.js v3 버전에서 사용하면 에러가 발생합니다.   
 
+### ESLint
+
+ECMAScript Lint라고 불리는 정적 분석 도구를 프로젝트 설치할 때 기본적으로 Enter만 누르다보면 같이 설치되게 되어있는데, 문법에 대해 일관성을 보장해주게 된다.
+Example 1 ) 
+
+mounted () {
+    this.count = 2
+}
+
+위의 문법에서 mounted 다음에 공백이 2번 필요한데 넣어주지 않으면 ESLint에서 에러를 발생시킨다.
 
