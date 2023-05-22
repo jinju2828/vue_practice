@@ -1,0 +1,35 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="app">{{ message }}</div>
+</br>
+화면 로드 시 {{ message }} 가 먼저 보이는 이유는 </br>
+HTML 파일에서 Vue.js 코드를 실행할 때, 브라우저는 먼저 HTML을 해석하고 표시한 다음, Vue.js가 실행되어 데이터 바인딩과 렌더링을 처리합니다. 
+
+</br>
+만약에 {{ message }}를 보이게 하고 싶지 않다면 v-cloak 디렉티브를 추가합니다. </br>
+이 디렉티브는 Vue 컴파일러에 의해 처리되지 않으며, Vue 인스턴스가 준비되기 전까지 해당 요소를 숨깁니다.</br>
+2번 파일을 확인하세요.
+
+<script type="module">
+  import { createApp } from 'vue'
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
+
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
