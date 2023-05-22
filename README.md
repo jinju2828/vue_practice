@@ -40,3 +40,13 @@ mounted () {
 위의 문법에서 mounted 다음에 공백이 2번 필요한데 넣어주지 않으면 ESLint에서 아래와 같은 에러를 발생시킨다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/f10e5b0d-380b-47d6-a557-9eff4488fb67)
    
+### 생명주기 훅
+
+```javascript
+export default {
+  mounted() {
+    console.log(`컴포넌트가 마운트 됐습니다.`)
+  }
+}
+```
+mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있습니다:
