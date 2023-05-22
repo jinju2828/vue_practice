@@ -1,0 +1,42 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">메시지 뒤집기</button>
+    </div>
+    <br>
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+
+  <script type="module">
+      import { createApp } from 'vue';
+
+      createApp({
+        data() {
+          return {
+            message: '안녕하세요! Vue.js!'
+          }
+        },
+        methods: {
+          reverseMessage() {
+            this.message = this.message.split('').reverse().join('');
+          }
+        }
+      }).mount('#app-5');
+
+      createApp({
+        data() {
+          return {
+            message: '안녕하세요 Vue!'
+          }
+        }
+      }).mount('#app-6');
+    </script>
