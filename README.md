@@ -16,6 +16,8 @@ https://v2.ko.vuejs.org/v2/guide/index.html 에서 제공되는 2020년 이전�
 
 ### 시작하기(현재 v3)
 
+https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2020년 이후에 v3에서 제공하는 가이드 문서
+
 ### v2와 v3 차이
 
 1. Vue 버전 2에는 제한된 typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
