@@ -1,6 +1,6 @@
 # Vue 기초 학습
 
-### 기초 세팅 방법
+### 초기 Vue 설치 방법
 
 Node.js 설치 후 Command 에서 node -v 실행   
 npm install vue   
@@ -9,6 +9,10 @@ npm install -g @vue/cli c
 npm i -g @vue/cli-init   
 vue -V   
 vue init webpack 프로젝트명   
+
+### VS Code를 이용해 Github에 올리고 다시 받을 경우
+
+npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 합니다.
 
 ### 시작하기(과거 v2)
 
