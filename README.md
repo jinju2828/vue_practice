@@ -1,4 +1,6 @@
-# 기초 세팅 방법
+# Vue 기초 학습
+
+### 기초 세팅 방법
 
 Node.js 설치 후 Command 에서 node -v 실행
 npm install vue
