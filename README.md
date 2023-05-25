@@ -50,3 +50,14 @@ export default {
 }
 ```
 mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있습니다:   
+
+### npm start 이슈
+
+npm run dev, npm start 등 시작 시에는 항상 npm install로 node_modules 의존성을 내려받아야 한다.   
+   
+error:0308010C:digital envelope routines::unsupported   
+만약 React든 Vue든 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
+https://nodejs.org/en/blog/release/v16.16.0   
+
+
+
