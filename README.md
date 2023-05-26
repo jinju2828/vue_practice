@@ -10,6 +10,12 @@ npm i -g @vue/cli-init
 vue -V   
 vue init webpack 프로젝트명   
 
+**Note**
+This is a note
+
+**Warning**
+This is a warning
+
 ### VS Code를 이용해 Github에 올리고 다시 받을 경우
 
 npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 합니다.
