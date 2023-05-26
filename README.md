@@ -75,6 +75,16 @@ error:0308010C:digital envelope routines::unsupported
 만약 React든 Vue든 외부 프로젝트를 받아서 실행시킬 때 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
 https://nodejs.org/en/blog/release/v16.16.0   
 
+### 외부 라이브러리 추가 방법
+
+단순 js 파일을 사용했을 땐 cdn을 추가하거나 js 파일을 직접 프로젝트 경로에 넣어서 사용했지만   
+Vue나 React에서는 npm으로 종속성 라이브러리를 관리하는 것이 좋다.   
+```javascript
+npm install "라이브러리"   
+```
+를 하면 node_modules 폴더에 해당 라이브러리가 포함되며   
+package.json 파일에 해당 라이브러리에 관한 정보가 기재되어 추후 npm install을 다시 하더라도 node_modules 폴더 내에 해당 라이브러리가 다운로드가 된다.   
+
 ### 네비게이션 가드
 
 Vue에는 페이지 이동을 담당하는 router.js가 있다.
