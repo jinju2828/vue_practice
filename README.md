@@ -65,5 +65,20 @@ error:0308010C:digital envelope routines::unsupported
 만약 React든 Vue든 외부 프로젝트를 받아서 실행시킬 때 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
 https://nodejs.org/en/blog/release/v16.16.0   
 
+### 네비게이션 가드
+
+Vue에는 페이지 이동을 담당하는 router.js가 있다.
+
+```javascript
+router.beforeEach((to, from, next) => {
+  if (to.path === '/dashboard/basic-dashboard') {
+    next('/pages/alerts');
+  } else {
+    next();
+  }
+})
+```
+
+위와 같은 코드를 router.js에 적어주면 특정 링크로 진입하기 전에 Guard하여 링크 진입을 가로채고 원하는 명령어로 수행이 가능하다.
 
 
