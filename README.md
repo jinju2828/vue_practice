@@ -12,6 +12,7 @@ vue init webpack 프로젝트명
 
 > **Note**   
 > Vue CLI(Command Line Interface)를 설치하면 Vue 프로젝트를 만들 수 있게된다.   
+> 단순하게 하고싶으면 CDN을 추가해서 사용하면 된다.
 > Vue 3부터는 "vue create 프로젝트"로 프로젝트를 만드는 것을 권장하고 위의 방식은 Vue 3 이전에 쓰던 방식이다.   
 
 
