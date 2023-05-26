@@ -10,8 +10,8 @@ npm i -g @vue/cli-init
 vue -V   
 vue init webpack 프로젝트명   
 
-**Note**
-This is a note
+> **Note**
+> This is a note
 
 **Warning**
 This is a warning
