@@ -8,12 +8,14 @@ npm vue -v로 확인
 npm install -g @vue/cli c   
 npm i -g @vue/cli-init   
 vue -V   
-vue init webpack 프로젝트명   
+vue create 프로젝트명   
 
 > **Note**   
 >    
 > Vue CLI(Command Line Interface)를 설치하면 Vue 프로젝트를 만들 수 있게된다.(단순하게 하고싶으면 CDN을 추가해서 사용하면 된다.)   
-> Vue 3부터는 "vue create 프로젝트"로 프로젝트를 만드는 것을 권장하고 위의 방식은 Vue 3 이전에 쓰던 방식이다.   
+> Vue 3와 vue CLI 3 버전 이상부터는 "vue create 프로젝트명"로 프로젝트를 만드는 것을 권장한다.
+> vue CLI 2 버전 이하에서는 "vue init webpack 프로젝트명"로 만드는 것이 일반적이었다.   
+> 참고로 vue CLI 2는 2016년 12월, vue CLI 3은 2018년 8월에 출시되었다.   
 
 
 ### VS Code를 이용해 Github에 올리고 다시 받을 경우
@@ -31,7 +33,7 @@ https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2
 ### Vue v2와 v3 차이
 
 1. Vue 2에는 제한된 typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
-2. Vue 3은 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생합니다.   
+2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생합니다.   
 
 ### ESLint
 
