@@ -154,9 +154,21 @@ component에서 직접 import해서 AboutView를 보여지게 하는 방법도 �
    
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/6a35ae96-ec67-49d8-ba18-0034f571c58a)   
 App.vue 역시 router를 설치하면 위와 같이 수정 된다.   
-<router-link>는 태그를 통해 페이지 이동을 만드는 방법이다.   
-<router-view /> 우리가 선택한 페이지에 컴포넌트를 렌더링 해주는 역할을 하며 없으면 페이지가 안보이게 된다.   
-각각의 컴포넌트 내 스크립트에서는 this.$router.push('/pages/alerts'); 이렇게 이동시키면 된다.   
+   
+```javascript
+<router-link>
+```
+태그를 통해 페이지 이동을 만드는 방법이다.  
+   
+```javascript
+<router-view/>
+```
+우리가 선택한 페이지에 컴포넌트를 렌더링 해주는 역할을 하며 없으면 페이지가 안보이게 된다.  
+   
+```javascript
+this.$router.push('/pages/alerts');
+```
+각각의 컴포넌트 내 스크립트에서 위와 같이 이동시키면 된다.   
  
 ### 네비게이션 가드
 
