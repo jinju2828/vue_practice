@@ -119,7 +119,7 @@ npm install "라이브러리" --save
 위처럼 --save를 붙이면 package.json 파일에 해당 라이브러리에 관한 정보가 기재되어 추후 npm install을 다시 하더라도 node_modules 폴더 내에 해당 라이브러리가 다운로드가 된다.   
 추가된 library를 코드에서 import 해서 사용하면 된다.   
    
-예를 들어 가장 많이 쓰는 axios에 대해 다운받아보자.   
+예를 들어 가장 많이 쓰는 axios를 다운받아보자.   
 ```javascript
 npm install axios --save
 ```
