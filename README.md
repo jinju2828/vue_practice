@@ -143,7 +143,21 @@ vue add vuex
 vue add router
 ```
 
+### 라우터
 
+라우터는 페이지 이동을 담당한다. SSR로 작업하면 라우터 없이도 페이지 기능을 구현할 수 있지만 CSR이면 라우터를 이용한다.   
+
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/456cdf00-256f-47d8-bc2e-4cb58a2dc947)   
+vue add router를 통해 설치하면 router 폴더에 index.js가 생기며 위와 같은 코드가 존재한다.   
+라우터에 대한 샘플 코드이며 HomeView를 Import해서 해당 컴포넌트를 보여지게 하는 방법도 있으며   
+component에서 직접 import해서 AboutView를 보여지게 하는 방법도 존재한다.   
+   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/6a35ae96-ec67-49d8-ba18-0034f571c58a)   
+App.vue 역시 router를 설치하면 위와 같이 수정 된다.   
+<router-link>는 태그를 통해 페이지 이동을 만드는 방법이다.   
+<router-view /> 우리가 선택한 페이지에 컴포넌트를 렌더링 해주는 역할을 하며 없으면 페이지가 안보이게 된다.   
+각각의 컴포넌트 내 스크립트에서는 this.$router.push('/pages/alerts'); 이렇게 이동시키면 된다.   
+ 
 ### 네비게이션 가드
 
 Vue에는 페이지 이동을 담당하는 router.js가 있다.
@@ -160,6 +174,5 @@ router.beforeEach((to, from, next) => {
 
 위와 같은 코드를 router.js에 적어주면 특정 링크로 진입하기 전에 Guard하여 링크 진입을 가로채고 원하는 명령어로 수행이 가능하다.
 
-### 라우터
 
 
