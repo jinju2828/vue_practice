@@ -30,7 +30,7 @@ https://v2.ko.vuejs.org/v2/guide/index.html 에서 제공되는 2020년 9월 18�
 
 https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2020년 9월 18일 이후에 v3 버전에서 제공하는 가이드 문서
 
-### Vue v2와 v3 차이
+### Vue v2와 v3 차이(중요)
 
 1. Vue 2에는 제한된 typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
 2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생합니다.   
@@ -42,7 +42,10 @@ v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주
 v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.   
 2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크는 React다.   
 앞으로 뜰만한 프레임워크는 NextJs, Solid, Astro, svelte 등인 것을 보면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
-더군다나 Vue 3에서 Typecript와 Composition의 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어가는 속도가 더딘 것 같아 보인다.
+더군다나 Vue 3에서 Typecript와 Composition의 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어가는 속도가 더딘 것 같아 보인다.   
+그리고 Vue 3가 나왔다고 해서 Vue 2가 업데이트를 안하는 것은 아니다. [여기](https://github.com/vuejs/vue)에 들어가보면 현재 기준 2022년 11월 9일자로 2.7.14 버전이 stable 버전으로 등록되어있다.   
+   
+[NPM 다운로드 통계](https://www.npmjs.com/package/vue?activeTab=versions)를 확인하면 현재 가장 많이쓰고 있는 Vue 버전을 확인할 수 있다.
 
 > **Note**   
 >    
@@ -50,6 +53,13 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 > ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/2f9f4e57-c23b-4c3e-b382-2ebbe2dd3645)   
 > vue CLI 2 버전 이하에서는 "vue init webpack 프로젝트명"로 만드는 것이 일반적이었다.   
 > 참고로 vue CLI 2는 2016년 12월, vue CLI 3은 2018년 8월에 출시되었다.   
+
+> **Note**   
+>    
+> vue create "프로젝트명"을 통해 프로젝트를 설치하면 VUE CLI가 가정 안정적이라고 생각하는 Vue Version을 선택한다.   
+> ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a0003879-b1b1-4438-adfa-4307e05cb919)   
+> 위의 사진을 보면 2.6.14가 선택되어 있는데 현재 2.7.14까지 나왔으니 node_modules를 rm -rf ./node_modules를 통해 지우고 npm install로 다시 설치해서 써도 된다.   
+
 
 
 ### ESLint
