@@ -112,9 +112,25 @@ Vue나 React에서는 npm으로 종속성 라이브러리를 관리하는 것이
 ```javascript
 npm install "라이브러리"   
 ```
-를 하면 node_modules 폴더에 해당 라이브러리가 포함되며   
-package.json 파일에 해당 라이브러리에 관한 정보가 기재되어 추후 npm install을 다시 하더라도 node_modules 폴더 내에 해당 라이브러리가 다운로드가 된다.   
-추가된 library를 코드에서 import 해서 사용하면 된다.
+를 하면 node_modules 폴더에 해당 라이브러리가 포함된다.   
+```javascript
+npm install "라이브러리" --save
+```
+위처럼 --save를 붙이면 package.json 파일에 해당 라이브러리에 관한 정보가 기재되어 추후 npm install을 다시 하더라도 node_modules 폴더 내에 해당 라이브러리가 다운로드가 된다.   
+추가된 library를 코드에서 import 해서 사용하면 된다.   
+   
+예를 들어 가장 많이 쓰는 axios에 대해 다운받아보자.   
+```javascript
+npm install axios --save
+```
+그리고 main.js에 아래의 코드를 추가하면 된다.   
+```javascript
+import axios from 'axios'   
+Vue.prototype.$axios = axios // 전역 axios 설정   
+// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.   
+```
+
+
 
 ### 네비게이션 가드
 
