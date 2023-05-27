@@ -130,6 +130,18 @@ Vue.prototype.$axios = axios // 전역 axios 설정
 // 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.   
 ```
 
+### 외부 라이브러리 추가 방법 2
+
+외부 라이브러리를 추가하는 방법 중에는 CLI를 이용한 방법도 있다.   
+vuetify를 사용하려고 하면 npm install vuetify로 다운 받는 것이 아니라 vue add vuetify를 통해서 다운받는 것이 좋다.   
+npm install vuetify와 차이점이 있다면 둘다 똑같은 패키지 설치지만 vuetify를 npm을 통해서 설치하면 내가 수동으로 파일을 수정 및 추가해줘야한다.   
+예를들어 vuetify.js(추가), main.js(수정), HelloWorld.vue(vuetify 소개 페이지로 수정) 등의 작업을 vue add를 통하면 자동으로 할 수 있다.   
+Vuetify나 그 외에 vuex(상태관리 라이브러리), router 등은 필수로 설치하는 것이 좋으니 미리 설치해서 사용하자.
+```javascript
+vue add vuetify      
+vue add vuex   
+vue add router
+```
 
 
 ### 네비게이션 가드
@@ -147,5 +159,7 @@ router.beforeEach((to, from, next) => {
 ```
 
 위와 같은 코드를 router.js에 적어주면 특정 링크로 진입하기 전에 Guard하여 링크 진입을 가로채고 원하는 명령어로 수행이 가능하다.
+
+### 라우터
 
 
