@@ -20,7 +20,7 @@ vue create 프로젝트명
 
 ### VS Code를 이용해 Github에 올리고 다시 받을 경우
 
-npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 합니다.
+npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 한다. 이건 어느 프론트엔드 프레임워크나 마찬가지다.
 
 ### 시작하기(과거 v2)
 
@@ -148,7 +148,7 @@ vue add router
 vuetify를 설치하면 <v- 형태로 이루어진 태그를 사용할 수 있다.   
 여기서 가장 중요한 태그는 v-app 태그다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/8eda2f1d-b43d-4e65-abee-936ff65761fb)   
-v-app 태그를 적용해줘야 node_modules\vuetify\dist\vuetify.css 가 적용된다.   
+v-app 태그를 적용해줘야 node_modules\vuetify\dist\vuetify.css 가 적용되며 vuetify의 시작 태그라고 보면된다.   
 
 
 ### 라우터
