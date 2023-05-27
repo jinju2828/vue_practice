@@ -147,7 +147,7 @@ vue add router
 
 라우터는 페이지 이동을 담당한다. SSR로 작업하면 라우터 없이도 페이지 기능을 구현할 수 있지만 CSR이면 라우터를 이용한다.   
 
-![image](https://github.com/stir084/Vue-Pratice/assets/47946124/456cdf00-256f-47d8-bc2e-4cb58a2dc947)   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/6a208e00-6cf2-402f-8840-50eb782652cd)   
 vue add router를 통해 설치하면 router 폴더에 index.js가 생기며 위와 같은 코드가 존재한다.   
 라우터에 대한 샘플 코드이며 HomeView를 Import해서 해당 컴포넌트를 보여지게 하는 방법도 있으며   
 component에서 직접 import해서 AboutView를 보여지게 하는 방법도 존재한다.   
@@ -169,6 +169,16 @@ App.vue 역시 router를 설치하면 위와 같이 수정 된다.
 this.$router.push('/pages/alerts');
 ```
 각각의 컴포넌트 내 스크립트에서 위와 같이 이동시키면 된다.   
+   
+위의 사진을 보면 routes 변수를 설정할 때 name이 있는데 이 name을 통한 이동도 가능하다.   
+```javascript
+this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우트로 이동
+```
+```javascript
+<router-link :to="{ name: 'about' }">About 페이지로 이동</router-link>   
+//:to는 v-bind:to의 축약형이다.
+```
+    
  
 ### 네비게이션 가드
 
