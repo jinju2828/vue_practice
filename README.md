@@ -17,6 +17,12 @@ vue create 프로젝트명
 > vue CLI 2 버전 이하에서는 "vue init webpack 프로젝트명"로 만드는 것이 일반적이었다.   
 > 참고로 vue CLI 2는 2016년 12월, vue CLI 3은 2018년 8월에 출시되었다.   
 
+> **Note**
+> 
+> [Vue Sample Template File](https://demos.wrappixel.com/free-admin-templates/vuejs/materialpro-vuejs-free/landingpage/index.html)   
+> 위 링크를 통해 Vue 2 Sample 파일을 다운 받을 수 있으며 Vue 구조를 눈에 익히기 좋다.   
+> 위의 vue create 명령어 대신 위의 프로젝트를 사용해도 된다.   
+
 
 ### 프로젝트를 Github에 올리고 다시 받을 경우
 
@@ -93,8 +99,6 @@ mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료�
 그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
    
-# [Vue Sample Template File](https://demos.wrappixel.com/free-admin-templates/vuejs/materialpro-vuejs-free/landingpage/index.html)   
-
 ### npm start 동작 시 node 버전에 따른 이슈
 
 error:0308010C:digital envelope routines::unsupported   
