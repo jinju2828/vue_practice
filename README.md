@@ -28,7 +28,7 @@ https://v2.ko.vuejs.org/v2/guide/index.html 에서 제공되는 2020년 9월 18�
 
 ### 시작하기(현재 v3)
 
-https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2020년 9월 18일 이후에 v3에서 제공하는 가이드 문서
+https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2020년 9월 18일 이후에 v3 버전에서 제공하는 가이드 문서
 
 ### Vue v2와 v3 차이
 
