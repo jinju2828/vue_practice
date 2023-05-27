@@ -22,13 +22,13 @@ vue create 프로젝트명
 
 npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 한다. 이건 어느 프론트엔드 프레임워크나 마찬가지다.
 
-### 시작하기(과거 v2)
+### 시작하기(v2)
 
-https://v2.ko.vuejs.org/v2/guide/index.html 에서 제공되는 2020년 9월 18일 이전에 v2 버전에서 제공되던 가이드 문서
+https://v2.ko.vuejs.org/v2/guide/index.html v2에 대한 공식 가이드 문서이며 2023년 5월 현재 기준에도 v2를 가장 많이 사용한다.
 
-### 시작하기(현재 v3)
+### 시작하기(v3)
 
-https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2020년 9월 18일 이후에 v3 버전에서 제공하는 가이드 문서
+https://ko.vuejs.org/guide/quick-start.html#try-vue-online v3에 대한 공식 가이드 문서이며 호환성 문제로 v3는 아직 권장하지 않는 편이다.
 
 ### Vue v2와 v3 차이(중요)
 
