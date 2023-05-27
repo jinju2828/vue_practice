@@ -18,35 +18,36 @@ vue create 프로젝트명
 > 참고로 vue CLI 2는 2016년 12월, vue CLI 3은 2018년 8월에 출시되었다.   
 
 
-### VS Code를 이용해 Github에 올리고 다시 받을 경우
+### 프로젝트를 Github에 올리고 다시 받을 경우
 
-npm install로 node_modules 폴더를 만들어줘서 의존성을 만들어줘야 한다. 이건 어느 프론트엔드 프레임워크나 마찬가지다.
+npm install로 package.json에 있는 정보를 토대로 node_modules 의존성을 내려받아야 한다. 
+이건 어느 프론트엔드 프레임워크나 마찬가지다.   
 
 ### 시작하기(v2)
 
 https://v2.ko.vuejs.org/v2/guide/index.html   
-v2에 대한 공식 가이드 문서이며 2023년 5월 현재 기준에도 v2를 가장 많이 사용한다.
+v2에 대한 공식 가이드 문서이며 2023년 5월 현재 기준에도 v2를 가장 많이 사용한다.   
 위의 시작하기(v2) 폴더에서 sample HTML 파일로 테스트 해볼 수 있다.
 
 ### 시작하기(v3)
 
 https://ko.vuejs.org/guide/quick-start.html#try-vue-online   
-v3에 대한 공식 가이드 문서이며 호환성 문제로 v3는 아직 권장하지 않는 편이다.
+v3에 대한 공식 가이드 문서이며 호환성 문제로 v3는 아직 권장하지 않는 편이다.   
 위의 시작하기(v3) 폴더에서 sample HTML 파일로 테스트 해볼 수 있다.
 
 ### Vue v2와 v3 차이(중요)
 
-1. Vue 2에는 제한된 Typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
-2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생합니다.   
+1. Vue 2에는 제한된 Typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있다. 
+2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생한다.   
     
-어떤걸 쓸까라고 한다면 v2를 쓰는 것이 낫다. 아직은 기업들도 v2를 쓰고 v2에 대한 생태계가 더 크다.   
-v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주는 Vue의 핵심 라이브러리도 v2를 쓰는 것을 더 권장하고 있다.(2023/05/28)   
+v3 보다는 v2를 쓰는 것이 낫다. (2023/05/28)   
+아직은 기업들도 v2를 쓰고 v2에 대한 생태계가 더 크다.   
+v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주는 Vue의 핵심 라이브러리도 v2를 쓰는 것을 더 권장하고 있다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/c7c1ef6c-c61b-4e24-926a-a5ecbe076cd0)   
    
 v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.   
-2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크는 React다.   
-앞으로 뜰만한 프레임워크는 NextJs, Solid, Astro, svelte 등인 것을 보면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
-더군다나 Vue 3에서 Typecript와 Composition의 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어가는 속도가 더딘 것 같아 보인다.   
+2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크는 React이고 앞으로 뜰만한 프레임워크는 NextJs, Solid, Astro, svelte 등인 것을 보면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
+더군다나 Vue 3에서의 Typecript와 Composition API 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어갈 이유는 더더욱이 부족하다.  
 그리고 Vue 3가 나왔다고 해서 Vue 2가 업데이트를 안하는 것은 아니다. [Vue Github](https://github.com/vuejs/vue)에 들어가보면 현재 기준 2022년 11월 9일자로 2.7.14 버전이 stable 버전으로 등록되어있다.   
    
 [NPM 다운로드 통계](https://www.npmjs.com/package/vue?activeTab=versions)를 확인하면 현재 가장 많이쓰고 있는 Vue 버전을 확인할 수 있다.
@@ -58,13 +59,12 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 
 > **Note**   
 >    
-> vue create "프로젝트명"을 통해 프로젝트를 설치하면 VUE CLI가 가정 안정적이라고 생각하는 Vue Version을 선택한다.   
+> vue create "프로젝트명"을 통해 프로젝트를 설치하면 Vue CLI가 가정 안정적이라고 생각하는 Vue Version을 선택한다.   
 > package.json을 확인해보자.   
 > ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a0003879-b1b1-4438-adfa-4307e05cb919)   
-> Vue 버전은 2.6.14로 현재 2.7.14까지 나왔으니 CLI는 낮은 버전을 쓰라고 하고 있다.   
+> Vue 버전은 2.6.14로 현재 2.7.14까지 나왔으니 CLI는 그것보다 낮은 버전을 쓰라고 권장하고 있는 셈이다.   
 > 2.7.14를 쓰고 싶으면 해당 부분을 "vue": "^2.7.14"로 고치거나 항상 최신 버전을 사용하고 싶다면 "vue": "^2.x.x"로 수정한다.   
-> 그리고 필히 node_modules폴더를 지우고 npm install로 다시 설치하면 된다.   
-
+> 그리고 node_modules 폴더를 지우고 npm install로 다시 설치하면 된다.   
 
 
 ### ESLint
@@ -89,25 +89,23 @@ export default {
   }
 }
 ```
-mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있습니다:   
+mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있다.   
+그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
    
 # [Vue Sample Template File](https://demos.wrappixel.com/free-admin-templates/vuejs/materialpro-vuejs-free/landingpage/index.html)   
 
-### npm start 이슈
+### npm start 동작 시 node 버전에 따른 이슈
 
-npm run dev, npm start 등 시작 시에는 항상 npm install로 package.json에 있는 정보를 토대로 node_modules 의존성을 내려받아야 한다. 
+error:0308010C:digital envelope routines::unsupported   
+만약 React든 Vue든 외부 프로젝트를 받아서 실행시킬 때 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
+https://nodejs.org/en/blog/release/v16.16.0   
 
 > **Note**   
 >    
 > 내려받은 프로젝트에 따라 npm run dev나 npm run start는 실행이 안될 수도 있다.   
 > package.json 안에있는 파일에 "scripts" 부분에 serve만 있는 경우 npm run serve로 실행시켜야 한다.   
 
-
-      
-error:0308010C:digital envelope routines::unsupported   
-만약 React든 Vue든 외부 프로젝트를 받아서 실행시킬 때 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
-https://nodejs.org/en/blog/release/v16.16.0   
 
 ### 외부 라이브러리 추가 방법
 
