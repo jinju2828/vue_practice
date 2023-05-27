@@ -143,6 +143,14 @@ vue add vuex
 vue add router
 ```
 
+### Vuetify
+
+vuetify를 설치하면 <v- 형태로 이루어진 태그를 사용할 수 있다.   
+여기서 가장 중요한 태그는 v-app 태그다.   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/8eda2f1d-b43d-4e65-abee-936ff65761fb)   
+v-app 태그를 적용해줘야 node_modules\vuetify\dist\vuetify.css 가 적용된다.   
+
+
 ### 라우터
 
 라우터는 페이지 이동을 담당한다. SSR로 작업하면 라우터 없이도 페이지 기능을 구현할 수 있지만 CSR이면 라우터를 이용한다.   
