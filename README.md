@@ -59,7 +59,7 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 > ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a0003879-b1b1-4438-adfa-4307e05cb919)   
 > Vue 버전은 2.6.14로 현재 2.7.14까지 나왔으니 CLI는 낮은 버전을 쓰라고 하고 있다.   
 > 2.7.14를 쓰고 싶으면 해당 부분을 "vue": "^2.7.14"로 고치거나 항상 최신 버전을 사용하고 싶다면 "vue": "^2.x.x"로 수정한다.   
-> 그리고 필히 node_modules를 rm -rf ./node_modules를 통해 지우고 npm install로 다시 설치하면 된다.   
+> 그리고 필히 node_modules폴더를 지우고 npm install로 다시 설치하면 된다.   
 
 
 
