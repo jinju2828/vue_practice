@@ -43,7 +43,7 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크는 React다.   
 앞으로 뜰만한 프레임워크는 NextJs, Solid, Astro, svelte 등인 것을 보면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
 더군다나 Vue 3에서 Typecript와 Composition의 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어가는 속도가 더딘 것 같아 보인다.   
-그리고 Vue 3가 나왔다고 해서 Vue 2가 업데이트를 안하는 것은 아니다. [여기](https://github.com/vuejs/vue)에 들어가보면 현재 기준 2022년 11월 9일자로 2.7.14 버전이 stable 버전으로 등록되어있다.   
+그리고 Vue 3가 나왔다고 해서 Vue 2가 업데이트를 안하는 것은 아니다. [Vue Github](https://github.com/vuejs/vue)에 들어가보면 현재 기준 2022년 11월 9일자로 2.7.14 버전이 stable 버전으로 등록되어있다.   
    
 [NPM 다운로드 통계](https://www.npmjs.com/package/vue?activeTab=versions)를 확인하면 현재 가장 많이쓰고 있는 Vue 버전을 확인할 수 있다.
 
