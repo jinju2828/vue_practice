@@ -34,6 +34,19 @@ https://ko.vuejs.org/guide/quick-start.html#try-vue-online 에서 제공되는 2
 
 1. Vue 2에는 제한된 typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있습니다.   
 2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생합니다.   
+    
+어떤걸 쓸까라고 한다면 v2를 쓰는 것이 낫다. 아직은 기업들도 v2를 쓰고 v2에 대한 생태계가 더 크다.   
+v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주는 Vue의 핵심 라이브러리도 v2를 쓰는 것을 더 권장하고 있다.(2023/05/28 기준)   
+v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.   
+2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크가 NextJs, Solid, Astro를 감안하면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
+
+> **Note**   
+>    
+> vue create "프로젝트명"을 하면 아래와 같이 vue 3 혹은 vue 2를 선택할 수 있다.
+> ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/2f9f4e57-c23b-4c3e-b382-2ebbe2dd3645)
+> vue CLI 2 버전 이하에서는 "vue init webpack 프로젝트명"로 만드는 것이 일반적이었다.   
+> 참고로 vue CLI 2는 2016년 12월, vue CLI 3은 2018년 8월에 출시되었다.   
+
 
 ### ESLint
 
