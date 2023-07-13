@@ -1,6 +1,8 @@
 # Vue 기초 학습
 
-아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.
+아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
+vue-feature 프로젝트는 vue 기능을 테스트 하기 위해서 추가한 프로젝트이다.   
+현재까지 추가된 기능은 vuex, v-model, v-on, v-bind, watch와 computed다.    
 
 ### 초기 Vue 설치 방법
 
@@ -195,7 +197,18 @@ this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우�
 //:to는 v-bind:to의 축약형이다.
 ```
     
- 
+
+### Vuex와 Vue Devtools
+
+Vue Devtools를 검색하면 나오는 것은 vue 3 전용 확장 프로그램이고    
+Vue 2를 사용할 때는 아래 링크의 Legacy 확장 프로그램을 사용해야한다.   
+https://chrome.google.com/webstore/detail/vuejs-devtools/iaajmlceplecbljialhhkmedjlpdblhp   
+
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/aa2cd474-55fd-418d-b183-5be9a1521319)   
+Vuex를 쓰면 Time Travel 기능을 위와 같이 개발자도구에서 이용할 수 있다.   
+Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.   
+
+
 ### 네비게이션 가드
 
 Vue에는 페이지 이동을 담당하는 router.js가 있다.
