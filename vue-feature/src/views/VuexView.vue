@@ -37,6 +37,7 @@ export default {
       return this.$store.state.count;
     },
     ...mapState(['count']), // count는 내가 임의로 설정한 변수가 아니고 store에 있는 값을 사용해야한다.
+    // mapState는 보통 computed와 사용한다. 캐싱 및 데이터 바인딩을 위해서다.
     ...mapGetters(['doubleCount']) // doubleCount는 내가 임의로 설정한 변수가 아니고 store에 있는 값을 사용해야한다.
   },
   methods: {
