@@ -204,9 +204,9 @@ Vue Devtools를 검색하면 나오는 것은 vue 3 전용 확장 프로그램�
 Vue 2를 사용할 때는 아래 링크의 Legacy 확장 프로그램을 사용해야한다.   
 https://chrome.google.com/webstore/detail/vuejs-devtools/iaajmlceplecbljialhhkmedjlpdblhp   
 
-![image](https://github.com/stir084/Vue-Pratice/assets/47946124/aa2cd474-55fd-418d-b183-5be9a1521319)
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/aa2cd474-55fd-418d-b183-5be9a1521319)   
 Vuex를 쓰면 Time Travel 기능을 위와 같이 개발자도구에서 이용할 수 있다.   
-Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인   
+Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.   
 
 
 ### 네비게이션 가드
