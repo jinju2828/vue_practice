@@ -1,58 +1,41 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <h1>v-bind 기능</h1>
+    <img v-bind:src="imageSrc" alt="이미지"><br>
+    img에 쓰이는 v-bind:src는 이미지 경로를 바인딩한다.<br>
+    <a v-bind:href="linkUrl">링크</a><br>
+    a에 쓰이는 v-bind:href는 링크를 바인딩한다.
+
+    <h3 v-bind:href="linkUrl">링크(클릭안됨)</h3>
+    당연하게도 h3은 a 태그가 아니므로 v-bind:href가 먹히지 않는다.
+
+    <h1>v-on 기능</h1><br>
+
+    <h1>v-model 기능</h1><br>
+    <input type="text" v-model="message">
+    <p>입력된 메시지: {{ message }}</p>
+    <input type="text" v-bind:value="message" v-on:input="message = $event.target.value">
+    <p>입력된 메시지: {{ message }}</p>
+    v-model은 v-bind와 v-on이 합쳐진 기능이다.<br>
+    양방향 데이터 바인딩 기능을 수행한다.<br><br>
+    v-bind는 외부에서 message 값이 변경되는 것을 감지한다.
+    v-on:input은 input 이벤트가 발생하면 해당 target.value(this.value)가 message에 들어간다.
+
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      message: '',
+      imageSrc: 'image.jpg',
+      linkUrl: 'https://www.example.com'
+    }
+  },
   name: 'HelloWorld',
   props: {
     msg: String
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
