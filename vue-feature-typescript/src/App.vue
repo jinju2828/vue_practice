@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link><br />
     <router-link to="/generic">generic</router-link><br />
     <router-link to="/async">async</router-link><br />
+    <router-link to="/type">type</router-link><br />
   </nav>
   <router-view />
 </template>

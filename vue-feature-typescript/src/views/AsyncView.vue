@@ -1,7 +1,11 @@
 <template>
   <div class="about">
     <h1>{{ fetchData() }}</h1>
+    <br />
+    response.json으로 인해 Promise 객체 출력됨<br />
     <h1>{{ fetchData2 }}</h1>
+    <br />
+    그냥 함수 내용 출력됨
   </div>
 </template>
 <script lang="ts" setup>

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AsyncView from "../views/AsyncView.vue";
 import GenericView from "../views/GenericView.vue";
+import TypeView from "@/views/TypeView.vue";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -12,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/async",
     name: "async",
     component: AsyncView,
+  },
+  {
+    path: "/type",
+    name: "type",
+    component: TypeView,
   },
   {
     path: "/generic",
