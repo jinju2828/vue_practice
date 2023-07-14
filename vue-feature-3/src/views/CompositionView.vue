@@ -5,10 +5,12 @@
   </div>
 
   <br>
-  Vue 3에서는 watchEffect를 사용하기 위해 반드시 import 구문을 사용해야 합니다.<br>
+  컴포지션 API는 vue 2에서 데이터, 메소드, 훅 등이 각각 다른 영역에 분산되어있는 것을 막고자 나온 개념이다.<br>
+
   컴포지션 API의 핵심은 setup() 이다.<br>
   데이터와 메소드가 한 곳 에서 정의되어 관리된다.<br>
 
+  Vue 3에서는 watchEffect를 사용하기 위해 반드시 import 구문을 사용해야 합니다.<br>
   const doubleCount = computed(() => count.value * 2);<br>
   watchEffect(() => { alert(`ddd ${name.value}`); });<br>
   vue 2의 computed나 watch의 기능을 Composition API에서 따로 분리해서 사용할 수 있다.<br>

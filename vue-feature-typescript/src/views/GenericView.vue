@@ -34,4 +34,5 @@ function identity2<T>(arg: T): boolean {
 }
 
 const test2 = ref(identity2<number>(3));
+//----------------------------------------
 </script>
