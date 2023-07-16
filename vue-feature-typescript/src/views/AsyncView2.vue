@@ -3,8 +3,8 @@
 
   </div>
 </template>
-<script lang="ts">
-import axios from "axios";
+<script>
+import axios, {AxiosRequestConfig} from "axios";
 /*
 Fetch
 설치 필요 없음
@@ -38,15 +38,24 @@ export axios; 이렇게 되어있으면 named구나
 */
 export default {
   mounted() {
-    axios.get('https://api.example.com/data')
-        .then(response => {
-          // 응답 데이터 처리
-          console.log(response.data);
-        })
-        .catch(error => {
-          // 에러 처리
-          console.error(error);
-        });
+    // axios.get('https://api.example.com/data')
+    //     .then(response => {
+    //       // 응답 데이터 처리
+    //       console.log(response.data);
+    //     })
+    //     .catch(error => {
+    //       // 에러 처리
+    //       console.error(error);
+    //     });
+
+   // Promise promise = axios.get('https://api.example.com/data');
+   //  const requestConfig: AxiosRequestConfig = {
+   //    url: 'https://randomuser.me/api',
+   //    method: 'GET'
+   //  }
+   //  const promise = axios.get('https://api.example.com/data');
+   //  console.log(promise)
+
   }
 }
 </script>
