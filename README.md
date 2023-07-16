@@ -126,18 +126,26 @@ npm install "라이브러리"
 ```javascript
 npm install "라이브러리" --save
 ```
-위처럼 --save를 붙이면 package.json 파일에 해당 라이브러리에 관한 정보가 기재되어 추후 npm install을 다시 하더라도 node_modules 폴더 내에 해당 라이브러리가 다운로드가 된다.   
-추가된 library를 코드에서 import 해서 사용하면 된다.   
+npm 5 전에는 위처럼 --save를 붙이면 package.json 파일에 해당 라이브러리에 관한 정보가 기재되었다.
+하지만 npm 5 위로부터는 --save가 없어도 package.json 파일에 해당 라이브러리 정보가 기재되며 --save 기능이 의미가 없어졌다.
    
-예를 들어 가장 많이 쓰는 axios를 다운받아보자.   
+가장 많이 쓰는 axios를 다운받아보자.   
 ```javascript
-npm install axios --save
+npm install axios
 ```
 그리고 main.js에 아래의 코드를 추가하면 된다.   
+## Vue 2
 ```javascript
 import axios from 'axios'   
 Vue.prototype.$axios = axios // 전역 axios 설정   
-// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.   
+// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
+// 혹은 각각의 컴포넌트에서 import axios from 'axios'로 사용한다. (공통 axios 파일 하나만 만들 경우 이렇게 사용해도 된다)   
+```
+## Vue 3
+```javascript
+import axios from 'axios'   
+App.config.globalProperties.$axios = axios;
+// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
 ```
 
 ### 외부 라이브러리 추가 방법 2
