@@ -143,8 +143,12 @@ Vue.prototype.$axios = axios // 전역 axios 설정
 ```
 ## Vue 3
 ```javascript
-import axios from 'axios'   
-App.config.globalProperties.$axios = axios;
+import { createApp } from "vue";   
+import App from "./App.vue";   
+import axios from "axios";   
+   
+const app = createApp(App);   
+app.config.globalProperties.$axios = axios;   
 // 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
 ```
 
