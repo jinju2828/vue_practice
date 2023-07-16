@@ -32,5 +32,4 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

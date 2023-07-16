@@ -1,10 +1,9 @@
 <template>
-  <div class="about">
-
-  </div>
+  <div class="about"></div>
 </template>
-<script>
-import axios, {AxiosRequestConfig} from "axios";
+<script lang="ts">
+import axios, { AxiosRequestConfig } from "axios";
+import { ReceiveAxiosType } from "@/views/test";
 /*
 Fetch
 설치 필요 없음
@@ -33,29 +32,57 @@ export default axios; 이렇게 선언되어있으면 default고
 export axios; 이렇게 되어있으면 named구나
 
 [이준호] [오전 12:29] AxiosRequestConfig와 Promise(벗겨짐) 구현하기
-[이준호] [오전 12:32] Generator?
-프롱트
 */
+
 export default {
   mounted() {
-    // axios.get('https://api.example.com/data')
-    //     .then(response => {
-    //       // 응답 데이터 처리
-    //       console.log(response.data);
-    //     })
-    //     .catch(error => {
-    //       // 에러 처리
-    //       console.error(error);
-    //     });
-
-   // Promise promise = axios.get('https://api.example.com/data');
-   //  const requestConfig: AxiosRequestConfig = {
-   //    url: 'https://randomuser.me/api',
-   //    method: 'GET'
-   //  }
-   //  const promise = axios.get('https://api.example.com/data');
-   //  console.log(promise)
-
-  }
-}
+    console.log(axios.get("https://jsonplaceholder.typicode.com/posts"));
+    console.log(this.handleClick());
+    //Promise pro;
+    //console.log(this.a());
+  },
+  methods: {
+    //methods 객체 내에서는 function 키워드를 빼고 사용한다.
+    handleClick() {
+      // 메서드의 로직을 작성합니다.
+    },
+    handleClick2: () => {
+      // 메서드의 로직을 작성합니다.
+    },
+    async asyncMethod() {
+      // 비동기적인 작업을 수행하는 메서드의 로직을 작성합니다.
+    },
+    // asyncMethod2: async <T>(): Promise<any> => {
+    //   // 비동기적인 작업을 수행하는 메서드의 로직을 작성합니다.
+    // }, 안됨 근데 test.ts는 됨
+    async asyncTest<T>(baseUrl: string): Promise<T> {
+      const response = await axios.get<T>(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      return response.data;
+    },
+    asyncTest2: async function <T>(baseUrl: string): Promise<T> {
+      const response = await axios.get<T>(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      return response.data;
+    },
+    asyncTest4: async (baseUrl: string) => {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      return response.data;
+    },
+    /*asyncTest3: async <T>(baseUrl: string): Promise<T> => {
+      const response = await axios.get<T>("https://jsonplaceholder.typicode.com/posts");
+      return response.data;
+    },*/
+  },
+  // methods: {
+  //   methodsCount(){
+  //     console.log('methods');
+  //     return 3;
+  //   }
+  // },
+};
 </script>

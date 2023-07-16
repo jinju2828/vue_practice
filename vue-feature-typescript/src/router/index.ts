@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AsyncView from "../views/AsyncView.vue";
-import AsyncView2 from "../views/AsyncView.vue";
+import AsyncView2 from "../views/AsyncView2.vue";
 import GenericView from "../views/GenericView.vue";
 import TypeView from "@/views/TypeView.vue";
 

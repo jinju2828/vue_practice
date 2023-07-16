@@ -8,7 +8,6 @@
 // 유니온 타입이라고도 불린다.
 let person: string | undefined = "John Doe";
 
-
 /**
  * 옵션 프로퍼티 설명
  */
@@ -47,15 +46,14 @@ console.log(person4.age); // 30
 /**
  * 맵드 타입
  */
-type Keys = 'option1' | 'option2';
+type Keys = "option1" | "option2";
 type Flags1 = { [K in Keys]: boolean };
 
 // 위와 같이 정의했을 경우 풀어 헤쳐놓은 모습은 아래와 같다.
 type Flags2 = {
   option1: boolean;
   option2: boolean;
-}
-
+};
 /**
  * 맵드 타입과 Partial에 관한 설명
  */
@@ -77,7 +75,6 @@ type Partial<T> = {
  */
 // 위와 같다. 첫번째 줄은 id? : number; 이렇게 될 것이다.
 // 중요한 점이 있다면 위 코드 없이 아래 코드만으로도 돌아간다 Partial을 만들고싶으면 그냥 아래처러 Partial만 정의하면 된다.
-
 
 // 사용 예제
 interface User {
@@ -111,20 +108,21 @@ const apple: Omit<Product, "stock"> = {
   id: 1,
   name: "red apple",
   price: 1000,
-  brand: "del"
+  brand: "del",
 };
 
 /**
  * 위의 내용을 바탕으로 실습하기
  */
-interface User {
+interface User2 {
   id: number;
   name: string;
   email: string;
 }
-type t1 = Partial<User>; // 모든 요소를 Partial로 만들어서 type 만들기
+type t1 = Partial<User2>; // 모든 요소를 Partial로 만들어서 type 만들기
 //interface t3<Partial<User>>; Interface를 Interface로 바꾸는 것은 불가능
-const t2: Partial<User> = { // 모든 요소를 Partial로 만들어서 변수 정의
+const t2: Partial<User2> = {
+  // 모든 요소를 Partial로 만들어서 변수 정의
   id: 3,
-}
+};
 </script>
