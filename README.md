@@ -138,12 +138,14 @@ npm install axios
 ```javascript
 import axios from 'axios'   
 Vue.prototype.$axios = axios // 전역 axios 설정   
-// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.   
+// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
+// 혹은 각각의 컴포넌트에서 import axios from 'axios'로 사용한다. (공통 axios 파일 하나만 만들 경우 이렇게 사용해도 된다)   
 ```
 ## Vue 3
 ```javascript
 import axios from 'axios'   
-App.config.globalProperties.$axios = axios;   
+App.config.globalProperties.$axios = axios;
+// 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
 ```
 
 ### 외부 라이브러리 추가 방법 2
