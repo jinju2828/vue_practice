@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link><br />
     <router-link to="/generic">generic</router-link><br />
     <router-link to="/async">async</router-link><br />
+    <router-link to="/async2">async2</router-link><br />
     <router-link to="/type">type</router-link><br />
   </nav>
   <router-view />
@@ -31,4 +32,5 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
