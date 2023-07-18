@@ -303,9 +303,9 @@ store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 mo
 
 ## store에는 왜 action이 필요할까?
 
-![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)
-vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.
-바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)   
+vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.   
+바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?   
 단일 소스 진실(Single Source of Truth)이 따르면 Vuex는 상태 변이를 중앙 집중적으로 관리하는 패턴을 따른다.   
 actions는 애플리케이션의 비즈니스 로직이나 비동기 작업을 처리하고, 그 결과로 mutations를 호출하여 실제 상태를 변경한다.   
 이로써 애플리케이션의 상태는 일관되고 예측 가능한 방식으로 변경된다.   
@@ -337,6 +337,7 @@ created(){
 ```
 위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
 물론 보안에는 위배되니 개발 용도로만 편의상 쓰는 것이 좋다.   
+child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
 
 
 
