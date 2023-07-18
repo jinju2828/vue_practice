@@ -335,10 +335,54 @@ created(){
     window.datas = this.$options.data();
 }
 ```
-위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
+참고로 options는 현재 활성화된 컴포넌트의 data, methods, computed와 같은 기능을 접근하는 용도로 쓰이며 vue 기능 안에서만 쓸 수 있다.(개발자도구에서 사용 불가)   
+하지만 위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
 물론 보안에는 위배되니 개발 용도로만 편의상 쓰는 것이 좋다.   
 child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
 
 
+## export
 
+### 사용법 1
+외부 파일(js, vue) 파일에서 export로 내보내면 사용할 컴포넌트에서 import from “js 파일 혹은 vue 파일” 등으로 사용한다.   
+
+### 사용법 2 - 함수, 클래스, 변수 가져오기
+export default 하면 import { } 로 가져올 때 검색이 안된다.
+export default 하려면 {}를 빼고 import 함수명 from * 으로 사용한다.
+default를 뺀 export만 할 경우에는 import { 함수명 } from * 으로 사용한다.
+```javascript
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+
+function sayBye(user) {
+  alert(`Bye, ${user}!`);
+}
+
+export {sayHi, sayBye};
+import {sayHi, sayBye} from './say.js';
+```
+### 사용법 3 - 컴포넌트 가져오기
+```javascript
+MyComp.vue파일에서 export default { 하면은 익명 객체로 보내는 것이고
+받는 곳에서는 해당 vue파일의 이름으로 import MyComp from ‘./MyComp.vue’; 라고 하면 <MyComp> 컴포넌트 사용 가능
+```
+
+## 웹팩
+
+정적 자원을 모듈형태로 관리하고 번들링함.   
+목적은 어플리케이션 로딩 속도 향상에 있다.   
+
+## 바벨 
+
+ECMAScript를 준수하지 않는 구 버전의 브라우저에 지원해주는 것을 말한다.   
+
+## 번외
+
+### process.env
+package.json에 시작 부분에 —mode local로 설정하면 프로젝트 루트 폴더에 있는 .env.local 파일이 실행되며 전역 환경변수에 관한 부분이다.
+
+### Vue mixin
+Vue 컴포넌트에 재사용 가능한 기능을 배포 가능.
+기존 컴포넌트에 있는 option에 추가한다는 뜻임.
 
