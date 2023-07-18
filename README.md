@@ -4,7 +4,7 @@
 vue-feature 프로젝트는 vue 기능을 테스트 하기 위해서 추가한 프로젝트이다.   
 현재까지 추가된 기능은 vuex, v-model, v-on, v-bind, watch와 computed다.    
 
-### 초기 Vue 설치 방법
+## 초기 Vue 설치 방법
 
 Node.js 설치 후 Command 에서 node -v 실행   
 npm install vue   
@@ -28,29 +28,29 @@ vue create 프로젝트명
 > 위의 vue create 명령어 대신 위의 프로젝트를 사용해도 된다.   
 
 
-### 프로젝트를 Github에 올리고 다시 받을 경우
+## 프로젝트를 Github에 올리고 다시 받을 경우
 
 npm install로 package.json에 있는 정보를 토대로 node_modules 의존성을 내려받아야 한다. 
 이건 어느 프론트엔드 프레임워크나 마찬가지다.   
 
-### 시작하기(v2)
+## 시작하기(v2)
 
 https://v2.ko.vuejs.org/v2/guide/index.html   
 v2에 대한 공식 가이드 문서이며 2023년 5월 현재 기준에도 v2를 가장 많이 사용한다.   
 위의 시작하기(v2) 폴더에서 sample HTML 파일로 테스트 해볼 수 있다.
 
-### 시작하기(v3)
+## 시작하기(v3)
 
 https://ko.vuejs.org/guide/quick-start.html#try-vue-online   
 v3에 대한 공식 가이드 문서이며 호환성 문제로 v3는 아직 권장하지 않는 편이다.   
 위의 시작하기(v3) 폴더에서 sample HTML 파일로 테스트 해볼 수 있다.
 
-### Vue v2와 v3 차이(중요)
+## Vue v2와 v3 차이(중요)
 
 1. Vue 2에는 제한된 Typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있다. 
 2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생한다.   
     
-v3 보다는 v2를 쓰는 것이 낫다. (2023/05/28)   
+v3 보다는 v2를 쓰는 것이 낫다.(지극히 개인적인 주관) (2023/05/28)   
 아직은 기업들도 v2를 쓰고 v2에 대한 생태계가 더 크다.   
 v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주는 Vue의 핵심 라이브러리도 v2를 쓰는 것을 더 권장하고 있다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/c7c1ef6c-c61b-4e24-926a-a5ecbe076cd0)   
@@ -77,7 +77,7 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 > 그리고 node_modules 폴더를 지우고 npm install로 다시 설치하면 된다.   
 
 
-### ESLint
+## ESLint
 
 ECMAScript Lint라고 불리는 정적 분석 도구를 프로젝트 설치할 때 기본적으로 Enter만 누르다보면 같이 설치되게 되어있는데, 문법에 대해 일관성을 보장해주게 된다.   
    
@@ -90,7 +90,7 @@ mounted () {
 위의 문법에서 mounted 다음에 공백이 2번 필요한데 넣어주지 않으면 ESLint에서 아래와 같은 에러를 발생시킨다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/f10e5b0d-380b-47d6-a557-9eff4488fb67)
    
-### 생명주기 훅
+## 생명주기 훅
 
 ```javascript
 export default {
@@ -103,7 +103,7 @@ mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료�
 그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
    
-### npm start 동작 시 node 버전에 따른 이슈
+## npm start 동작 시 node 버전에 따른 이슈
 
 error:0308010C:digital envelope routines::unsupported   
 만약 React든 Vue든 외부 프로젝트를 받아서 실행시킬 때 위와 같은 에러가 발생한다면 node.js 버전을 18.16.0 이 아닌 16.16.0으로 내리면 해결된다.   
@@ -115,7 +115,7 @@ https://nodejs.org/en/blog/release/v16.16.0
 > package.json 안에있는 파일에 "scripts" 부분에 serve만 있는 경우 npm run serve로 실행시켜야 한다.   
 
 
-### 외부 라이브러리 추가 방법
+## 외부 라이브러리 추가 방법
 
 단순 javascript를 활용한 프로젝트는 해당 js파일 안에 cdn을 추가하거나 라이브러리 파일을 직접 프로젝트 경로에 넣어서 사용했지만   
 Vue나 React에서는 npm으로 종속성 라이브러리를 관리하는 것이 좋다.   
@@ -134,14 +134,14 @@ npm 5 전에는 위처럼 --save를 붙이면 package.json 파일에 해당 라�
 npm install axios
 ```
 그리고 main.js에 아래의 코드를 추가하면 된다.   
-## Vue 2
+### Vue 2
 ```javascript
 import axios from 'axios'   
 Vue.prototype.$axios = axios // 전역 axios 설정   
 // 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
 // 혹은 각각의 컴포넌트에서 import axios from 'axios'로 사용한다. (공통 axios 파일 하나만 만들 경우 이렇게 사용해도 된다)   
 ```
-## Vue 3
+### Vue 3
 ```javascript
 import { createApp } from "vue";   
 import App from "./App.vue";   
@@ -152,7 +152,7 @@ app.config.globalProperties.$axios = axios;
 // 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
 ```
 
-### 외부 라이브러리 추가 방법 2
+## 외부 라이브러리 추가 방법 2
 
 외부 라이브러리를 추가하는 방법 중에는 CLI를 이용한 방법도 있다.   
 vuetify를 사용하려고 하면 npm install vuetify로 다운 받는 것이 아니라 vue add vuetify를 통해서 다운받는 것이 좋다.   
@@ -165,7 +165,7 @@ vue add vuex
 vue add router
 ```
 
-### Vuetify
+## Vuetify
 
 vuetify를 설치하면 <v- 형태로 이루어진 태그를 사용할 수 있다.   
 여기서 가장 중요한 태그는 v-app 태그다.   
@@ -173,7 +173,7 @@ vuetify를 설치하면 <v- 형태로 이루어진 태그를 사용할 수 있�
 v-app 태그를 적용해줘야 node_modules\vuetify\dist\vuetify.css 가 적용되며 vuetify의 시작 태그라고 보면된다.   
 v-app 태그 없이도 하위 영역에 <v- 태그는 사용할 수 있기 때문에 css가 적용이 안된다면 v-app 태그 때문이다.   
 
-### 라우터
+## 라우터
 
 라우터는 페이지 이동을 담당한다. SSR로 작업하면 라우터 없이도 페이지 기능을 구현할 수 있지만 CSR이면 라우터를 이용한다.   
 
@@ -210,9 +210,22 @@ this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우�
 ```
     
 
-### Vuex
+## Vuex
 
-## 사용법 1
+### Vuex Store 데이터를 가져오는 여러가지 방법
+   
+1. 템플릿에 `this.$store.state.user`속성 바인딩   
+2. computed 속성에 `this.$store.state.user`   
+3. computed 속성에 mapState   
+4. computed 속성에 mapGetters
+
+1,2는 바로 들고오는 방법이고 3,4는 기능이 같으므로 어떤 것을 선택할지는 팀의 코드 컨벤션을 생각하면서 만들면 된다.   
+
+### compute에 사용하는 이유
+   
+Store 상태 변경시 자동 업데이트, watch에 없는 캐싱 기능   
+
+### 사용법 1
 
 ```javascript
 import {mapState} from 'vuex'   
@@ -224,7 +237,7 @@ computed: mapState({
 
 store/index.js에 저장된 state를 가져오기 위해 mapState라는 헬퍼 함수를 사용해서 가져올 수 있다.   
 
-## 사용법 2
+### 사용법 2
 
 ```javascript
 computed: {
@@ -241,19 +254,6 @@ computed: {
 ```
 배열로 가져와 쓰거나 객체로 가져와서 쓸 수 있다.   
     
-# Vuex를 가져오는 여러가지 방법
-   
-1. 템플릿에 `this.$store.state.user`속성 바인딩   
-2. computed 속성에 `this.$store.state.user`   
-3. computed 속성에 mapState   
-4. computed 속성에 mapGetters
-
-1,2는 바로 들고오는 방법이고 3,4는 기능이 같으므로 어떤 것을 선택할지는 팀의 코드 컨벤션을 생각하면서 만들면 된다.   
-   
-# compute에 사용하는 이유
-   
-상태 변경시 자동 업데이트, watch에 없는 캐싱 기능   
-
 ## 사용법 3   
 
 Store 모듈이라는게 store/index.js 뿐만 아니라 다른 파일에 있을 수도 있다.   
