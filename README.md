@@ -275,9 +275,16 @@ methods: {
 const userHelper = createNamespacedHelpers("user");
 ```
 
-이렇게 하면 store 밑에 있는 user 폴더 전체를 가져와서 userHelper에 넣어준다.   
-userHelper에는 mapState, mapMutations 등 여러가지 기능이 당연히 존재한다.   
-const { mapState }로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
+이렇게 하면 store 밑에 있는 user.js Store 파일을 가져와서 사용할 수 있다.   
+userHelper.mapState, userHelper.mapMutations 등 여러가지 기능으로 사용하면 된다.    
+const { mapState } = createNamespacedHelpers("user");로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
+
+### 사용법 4에 대한 응용
+
+store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 modules 부분에 store를 모듈별로 분할해서 사용할 수 있다.   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/4ee229c7-b680-4c5a-a1b0-903221b90f1e)   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a02d68b2-718b-4c9c-8987-fa9d6ac559a1)   
+
 
 ## store에는 왜 action가 필요할까?
 
