@@ -275,9 +275,29 @@ methods: {
 const userHelper = createNamespacedHelpers("user");
 ```
 
-이렇게 하면 store 밑에 있는 user 폴더 전체를 가져와서 userHelper에 넣어준다.   
-userHelper에는 mapState, mapMutations 등 여러가지 기능이 당연히 존재한다.   
-const { mapState }로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
+이렇게 하면 store 밑에 있는 user.js Store 파일을 가져와서 사용할 수 있다.   
+userHelper.mapState, userHelper.mapMutations 등 여러가지 기능으로 사용하면 된다.    
+const { mapState } = createNamespacedHelpers("user");로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
+
+### 사용법 4에 대한 응용
+
+store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 modules 부분에 store를 모듈별로 분할해서 사용할 수 있다.   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/4ee229c7-b680-4c5a-a1b0-903221b90f1e)   
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a02d68b2-718b-4c9c-8987-fa9d6ac559a1)   
+
+
+## store에는 왜 action가 필요할까?
+
+vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)
+
+## 바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?
+
+단일 소스 진실(Single Source of Truth)이 따르면 Vuex는 상태 변이를 중앙 집중적으로 관리하는 패턴을 따른다.   
+actions는 애플리케이션의 비즈니스 로직이나 비동기 작업을 처리하고, 그 결과로 mutations를 호출하여 실제 상태를 변경한다.   
+이로써 애플리케이션의 상태는 일관되고 예측 가능한 방식으로 변경된다.   
+즉, 단일 소스 진실(SSOT)에 의해 action으로 동작을 시키고 mutations으로는 값 변화를 시켜 소스에 대한 목적을 분리시킨다는 뜻이다.   
+
 
 ## Vue Devtools
 
@@ -293,7 +313,7 @@ Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.
 ### Vue 데이터 및 메소드 접근   
    
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
-$vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.
+$vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
 ## 네비게이션 가드
 
