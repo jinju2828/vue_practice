@@ -217,9 +217,9 @@ this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우�
 ```javascript
 import {mapState} from 'vuex'   
 computed: mapState({
-        count: state => state.count, // mapState라는 헬퍼 함수 내에 state 헬퍼 객체에 있는 count를 가져오는 방법
-        countAlias: 'count' // 위의 방법 대신 바로 namespace를 이용해 count를 가져오는 방법
-    })
+    count: state => state.count, // mapState라는 헬퍼 함수 내에 state 헬퍼 객체에 있는 count를 가져오는 방법
+    countAlias: 'count' // 위의 방법 대신 바로 namespace를 이용해 count를 가져오는 방법
+})
 ```
 
 store/index.js에 저장된 state를 가져오기 위해 mapState라는 헬퍼 함수를 사용해서 가져올 수 있다.   
@@ -241,37 +241,42 @@ computed: {
 ```
 배열로 가져와 쓰거나 객체로 가져와서 쓸 수 있다.   
     
-Computed에 사용하는 이유   
+# Vuex를 가져오는 여러가지 방법
    
-Vuex를 가져와서 사용방법은 아래와 같다.   
 1. 템플릿에 `this.$store.state.user`속성 바인딩   
 2. computed 속성에 `this.$store.state.user`   
 3. computed 속성에 mapState   
-4. computed 속성에 mapGetters   
+4. computed 속성에 mapGetters
+
 1,2는 바로 들고오는 방법이고 3,4는 기능이 같으므로 어떤 것을 선택할지는 팀의 코드 컨벤션을 생각하면서 만들면 된다.   
    
-compute에 사용하는 이유는 다음과 같다.   
+# compute에 사용하는 이유
+   
 상태 변경시 자동 업데이트, watch에 없는 캐싱 기능   
 
 ## 사용법 3   
 
 Store 모듈이라는게 store/index.js 뿐만 아니라 다른 파일에 있을 수도 있다.   
-그런 경우에는 아래와 같이 경로를 다 입력해서 가져올 수 있다. /B/C/Book 과 같은 방식으로 연결   
+그런 경우에는 아래와 같이 경로를 다 입력해서 가져올 수 있다.
 ```javascript
 methods: {
-        ...mapActions('A/B/C/Book', [ // A/B/C/Book에 있는 모듈
-            'setList'
-        ])
-    }
+    ...mapActions('A/B/C/Book', [ // A/B/C/ 경로에 있는 Book Store 모듈을 가져온다.
+        'setList'
+    ])
+}
 ```
 
-근데 이렇게 하면 methods 안에 경로가 매번 포함되어야 하니 가독성이 딸릴 수 있다.   
+근데 이렇게 하면 methods 안에 경로가 매번 포함되어야 하니 가독성이 부족하다.   
 
 ## 사용법 4
 
 ```javascript
 const userHelper = createNamespacedHelpers("user");
 ```
+
+이렇게 하면 store 밑에 있는 user 폴더 전체를 가져와서 userHelper에 넣어준다.   
+userHelper에는 mapState, mapMutations 등 여러가지 기능이 당연히 존재한다.   
+const { mapState }로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
 
 ### Vue Devtools
 
