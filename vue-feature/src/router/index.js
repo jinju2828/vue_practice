@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import VuexView from '../views/VuexView.vue'
+import VuexView2 from '../views/VuexView2.vue'
 import SpreadView from '../views/SpreadView.vue'
 
 Vue.use(VueRouter)
@@ -16,6 +17,11 @@ const routes = [
     path: '/vuex',
     name: 'vuex',
     component: VuexView
+  },
+  {
+    path: '/vuex2',
+    name: 'vuex2',
+    component: VuexView2
   },
   {
     path: '/spread',
