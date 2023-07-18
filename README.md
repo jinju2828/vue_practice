@@ -279,6 +279,19 @@ const userHelper = createNamespacedHelpers("user");
 userHelper에는 mapState, mapMutations 등 여러가지 기능이 당연히 존재한다.   
 const { mapState }로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
 
+## store에는 왜 action가 필요할까?
+
+vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.
+![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)
+
+## 바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?
+
+단일 소스 진실(Single Source of Truth)이 따르면 Vuex는 상태 변이를 중앙 집중적으로 관리하는 패턴을 따른다.   
+actions는 애플리케이션의 비즈니스 로직이나 비동기 작업을 처리하고, 그 결과로 mutations를 호출하여 실제 상태를 변경한다.   
+이로써 애플리케이션의 상태는 일관되고 예측 가능한 방식으로 변경된다.   
+즉, 단일 소스 진실(SSOT)에 의해 action으로 동작을 시키고 mutations으로는 값 변화를 시켜 소스에 대한 목적을 분리시킨다는 뜻이다.   
+
+
 ## Vue Devtools
 
 Vue Devtools를 검색하면 나오는 것은 vue 3 전용 확장 프로그램이고    
@@ -293,7 +306,7 @@ Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.
 ### Vue 데이터 및 메소드 접근   
    
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
-$vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.
+$vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
 ## 네비게이션 가드
 
