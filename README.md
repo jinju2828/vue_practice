@@ -220,6 +220,7 @@ this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우�
 4. computed 속성에 mapGetters
 
 1,2는 바로 들고오는 방법이고 3,4는 기능이 같으므로 어떤 것을 선택할지는 팀의 코드 컨벤션을 생각하면서 만들면 된다.   
+최종적으로는 아래 사용법 4에 나온 방식을 쓰는 것이 확장성에 좋다.   
 
 ### compute에 사용하는 이유
    
@@ -254,7 +255,7 @@ computed: {
 ```
 배열로 가져와 쓰거나 객체로 가져와서 쓸 수 있다.   
     
-## 사용법 3   
+### 사용법 3   
 
 Store 모듈이라는게 store/index.js 뿐만 아니라 다른 파일에 있을 수도 있다.   
 그런 경우에는 아래와 같이 경로를 다 입력해서 가져올 수 있다.
@@ -268,7 +269,7 @@ methods: {
 
 근데 이렇게 하면 methods 안에 경로가 매번 포함되어야 하니 가독성이 부족하다.   
 
-## 사용법 4
+### 사용법 4
 
 ```javascript
 const userHelper = createNamespacedHelpers("user");
@@ -278,23 +279,23 @@ const userHelper = createNamespacedHelpers("user");
 userHelper에는 mapState, mapMutations 등 여러가지 기능이 당연히 존재한다.   
 const { mapState }로도 가져올 수 있지만 위와 같이 변수로 설정해서 가져오는 것이 더 확장성에 좋다.   
 
-### Vue Devtools
+## Vue Devtools
 
 Vue Devtools를 검색하면 나오는 것은 vue 3 전용 확장 프로그램이고    
 Vue 2를 사용할 때는 아래 링크의 Legacy 확장 프로그램을 사용해야한다.   
 https://chrome.google.com/webstore/detail/vuejs-devtools/iaajmlceplecbljialhhkmedjlpdblhp   
 
-## Vuex와의 통합   
+### Vuex와의 통합   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/aa2cd474-55fd-418d-b183-5be9a1521319)   
 Vuex를 쓰면 Time Travel 기능을 위와 같이 개발자도구에서 이용할 수 있다.   
 Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.   
 
-## Vue 데이터 및 메소드 접근   
+### Vue 데이터 및 메소드 접근   
    
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
 $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.
 
-### 네비게이션 가드
+## 네비게이션 가드
 
 Vue에는 페이지 이동을 담당하는 router.js가 있다.
 
