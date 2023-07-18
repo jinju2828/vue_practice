@@ -173,7 +173,7 @@ vuetify를 설치하면 <v- 형태로 이루어진 태그를 사용할 수 있�
 v-app 태그를 적용해줘야 node_modules\vuetify\dist\vuetify.css 가 적용되며 vuetify의 시작 태그라고 보면된다.   
 v-app 태그 없이도 하위 영역에 <v- 태그는 사용할 수 있기 때문에 css가 적용이 안된다면 v-app 태그 때문이다.   
 
-## 라우터
+## Router
 
 라우터는 페이지 이동을 담당한다. SSR로 작업하면 라우터 없이도 페이지 기능을 구현할 수 있지만 CSR이면 라우터를 이용한다.   
 
@@ -208,7 +208,22 @@ this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우�
 <router-link :to="{ name: 'about' }">About 페이지로 이동</router-link>   
 //:to는 v-bind:to의 축약형이다.
 ```
-    
+
+### 네비게이션 가드
+
+Vue에는 페이지 이동을 담당하는 router.js가 있다.
+
+```javascript
+router.beforeEach((to, from, next) => {
+  if (to.path === '/dashboard/basic-dashboard') {
+    next('/pages/alerts');
+  } else {
+    next();
+  }
+})
+```
+
+위와 같은 코드를 router.js에 적어주면 특정 링크로 진입하기 전에 Guard하여 링크 진입을 가로채고 원하는 명령어로 수행이 가능하다.
 
 ## Vuex
 
@@ -281,19 +296,17 @@ const { mapState } = createNamespacedHelpers("user");로도 가져올 수 있지
 
 ### 사용법 4에 대한 응용
 
-store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 modules 부분에 store를 모듈별로 분할해서 사용할 수 있다.   
+store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 modules 부분에 store를 모듈별로 분할해서 사용할 수 있다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/4ee229c7-b680-4c5a-a1b0-903221b90f1e)   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a02d68b2-718b-4c9c-8987-fa9d6ac559a1)   
 
 
-## store에는 왜 action가 필요할까?
+## store에는 왜 action이 필요할까?
 
-vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)
-
-## 바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?
-
-단일 소스 진실(Single Source of Truth)이 따르면 Vuex는 상태 변이를 중앙 집중적으로 관리하는 패턴을 따른다.   
+vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.
+바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?
+단일 소스 진실(Single Source of Truth)이 따르면 Vuex는 상태 변이를 중앙 집중적으로 관리하는 패턴을 따른다.   
 actions는 애플리케이션의 비즈니스 로직이나 비동기 작업을 처리하고, 그 결과로 mutations를 호출하여 실제 상태를 변경한다.   
 이로써 애플리케이션의 상태는 일관되고 예측 가능한 방식으로 변경된다.   
 즉, 단일 소스 진실(SSOT)에 의해 action으로 동작을 시키고 mutations으로는 값 변화를 시켜 소스에 대한 목적을 분리시킨다는 뜻이다.   
@@ -315,21 +328,16 @@ Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
 $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
-## 네비게이션 가드
-
-Vue에는 페이지 이동을 담당하는 router.js가 있다.
-
+### Vue 데이터 및 메소드 전역으로 접근하기
 ```javascript
-router.beforeEach((to, from, next) => {
-  if (to.path === '/dashboard/basic-dashboard') {
-    next('/pages/alerts');
-  } else {
-    next();
-  }
-})
+created(){
+    window.methods = this.$options.methods;
+    window.datas = this.$options.data();
+}
 ```
+위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
+물론 보안에는 위배되니 개발 용도로만 편의상 쓰는 것이 좋다.   
 
-위와 같은 코드를 router.js에 적어주면 특정 링크로 진입하기 전에 Guard하여 링크 진입을 가로채고 원하는 명령어로 수행이 가능하다.
 
 
 
