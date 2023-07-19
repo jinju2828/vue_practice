@@ -1,8 +1,17 @@
 # Vue 기초 학습
 
 아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
-vue-feature 프로젝트는 vue 기능을 테스트 하기 위해서 추가한 프로젝트이다.   
-현재까지 추가된 기능은 vuex, v-model, v-on, v-bind, watch와 computed다.    
+
+vue-feature - vue 2에 관한 기능 테스트
+vuex, v-model, v-on, v-bind, watch와 computed   
+
+vue-feature-3 - vue 3에 관한 기능 테스트
+composition, reactive reference
+
+vue-feature-typescript - vue 3와 타입 스크립트에 관한 테스트
+Async, Generic, TypeScript
+
+
 
 ## 초기 Vue 설치 방법
 
