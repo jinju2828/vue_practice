@@ -6,6 +6,7 @@
     <router-link to="/async">async</router-link><br />
     <router-link to="/async2">async2</router-link><br />
     <router-link to="/type">type</router-link><br />
+    <router-link to="/interface">interface</router-link><br />
   </nav>
   <router-view />
 </template>

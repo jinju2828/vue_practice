@@ -4,7 +4,7 @@ import AsyncView from "../views/AsyncView.vue";
 import AsyncView2 from "../views/AsyncView2.vue";
 import GenericView from "../views/GenericView.vue";
 import TypeView from "@/views/TypeView.vue";
-
+import InterfaceView from "@/views/InterfaceView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -30,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/generic",
     name: "generic",
     component: GenericView,
+  },
+  {
+    path: "/interface",
+    name: "interface",
+    component: InterfaceView,
   },
   {
     path: "/about",
