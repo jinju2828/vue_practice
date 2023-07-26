@@ -337,18 +337,29 @@ Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
 $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
+### $options
+
+주로 디버깅 용도로 사용된다. $options는 data, methods, computed등과 같은 컴포넌트 초기 데이터와 메소드 객체에 대해 접근이 가능하다.   
+추후에 동적으로 추가되거나 변경된 데이터와 메소드는 접근이 불가능하다.
+child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
+
+```javascript
+created(){
+    console.log(this.$options.methods);
+    console.log(this.$options.data());
+}
+```
+
 ### Vue 데이터 및 메소드 전역으로 접근하기
 ```javascript
 created(){
-    window.methods = this.$options.methods;
-    window.datas = this.$data;
+    window.this = this;
+    window.data = this.$data;
 }
 ```
-options는 현재 활성화된 컴포넌트의 data, methods, computed와 같은 기능을 접근하는 용도로 쓰이며 vue 기능 안에서만 쓸 수 있다.(개발자도구에서 사용 불가)   
-하지만 위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
-물론 보안에는 위배되니 개발 용도로만 편의상 쓰는 것이 좋다.   
-child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
-data를 넣기위해서는 this.$options.data()도 사용할 수 있지만 $options는 초기 객체에 대한 값만 저장하므로 methods만 사용하고 data는 $data를 이용해서 가져와야한다.   
+
+개인적으로 Vue를 개발할 때 메소드나 데이터를 확인하기 위해 Vue 개발자 도구를 띄워서 확인하는게 불편하다고 생각했다.   
+위와 같이 선언하면 window.this로 전역 data, method에 대한 접근이 가능하다.   
 
 
 ## export
