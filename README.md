@@ -341,13 +341,14 @@ $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.
 ```javascript
 created(){
     window.methods = this.$options.methods;
-    window.datas = this.$options.data();
+    window.datas = this.$data;
 }
 ```
-참고로 options는 현재 활성화된 컴포넌트의 data, methods, computed와 같은 기능을 접근하는 용도로 쓰이며 vue 기능 안에서만 쓸 수 있다.(개발자도구에서 사용 불가)   
+options는 현재 활성화된 컴포넌트의 data, methods, computed와 같은 기능을 접근하는 용도로 쓰이며 vue 기능 안에서만 쓸 수 있다.(개발자도구에서 사용 불가)   
 하지만 위 코드를 적어주면 크롬 개발자 도구에서도 methods, datas로 접근이 가능하다.   
 물론 보안에는 위배되니 개발 용도로만 편의상 쓰는 것이 좋다.   
 child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
+data를 넣기위해서는 this.$options.data()도 사용할 수 있지만 $options는 초기 객체에 대한 값만 저장하므로 methods만 사용하고 data는 $data를 이용해서 가져와야한다.   
 
 
 ## export
