@@ -111,6 +111,7 @@ export default {
 created는 data, method, computed 속성이 정의된 상태를 말한다.   
 mounted는 초기 화면 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있다.   
 updated는 데이터 값이 변경될 때 발생한다.(같은 값을 여러번 props로 전송하면 최초 1회 updated 발생후 이후에는 발생하지 않는다.)   
+destroyed는 컴포넌트가 사라진 경우 발생한다. 이후에 다시 등장할 경우 created와 moutend를 다시 거치게 된다.
 그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
    
