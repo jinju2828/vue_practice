@@ -337,10 +337,11 @@ Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
 $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
-### $options
+### $options, $children, $refs
 
-주로 디버깅 용도로 사용된다. $options는 data, methods, computed등과 같은 컴포넌트 초기 데이터와 메소드 객체에 대해 접근이 가능하다.   
-추후에 동적으로 추가되거나 변경된 데이터와 메소드는 접근이 불가능하다.
+#### $options
+주로 디버깅 용도로 사용된다. $options는 현재 위치하고 있는 컴포넌트의 data, methods, computed등의 컴포넌트 초기 데이터와 메소드 객체에 대해 접근이 가능하다.   
+추후에 동적으로 추가되거나 변경된 데이터와 메소드는 접근이 불가능하다.   
 child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
 
 ```javascript
@@ -349,6 +350,19 @@ created(){
     console.log(this.$options.data());
 }
 ```
+#### $children, $refs
+$children과 $refs는 하위 컴포넌트에 접근하기 위해 사용되는 기능이다.   
+<input type="text" ref="textInput"> 이렇게 선언된 부분을 this.$refs.textInput.focus();와 같이 사용할 수 있다.   
+위의 코드는 단순히 id, class와 같이 선택해서 사용하는 것처럼 보이지만 주로 쓰이는 용도는 하위 컴포넌트에 ref값을 넣고 사용하는 방식이다.   
+   
+$refs는 렌더링 성능 문제가 발생한다.   
+왜냐면 $refs는 Vue의 반응성(Reactivity)를 무시하고 값을 수정할 수 있기 때문이다.   
+$refs를 통해 값이 수정되어도 렌더링되지 않는다.   
+
+두 기능 다 $options처럼 디버깅 용도로만 쓰이는 것을 권장한다.   
+$children과 $refs를 남발하면 하위 컴포넌트와 상위 컴포넌트의 강결합이 발생한다.   
+대부분의 경우에는 props와 events를 통해 부모-자식 간에 데이터 흐름을 구축하는 것이 권장되는 Vue.js의 핵심 아이디어다.   
+
 
 ### Vue 데이터 및 메소드 전역으로 접근하기
 ```javascript
