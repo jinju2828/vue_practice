@@ -239,8 +239,7 @@ router.beforeEach((to, from, next) => {
 
 ## Vuex
 
-참고 - Vuex는 브라우저 탭 끼리 연동되지 않는다. 연동 시키리면 별도의 작업이 필요하다.   
-브라우저끼리 연동하려면 Local Storage나 Cookie와 같은 기능을 이용하자.   
+참고 - Vuex는 브라우저 탭 끼리 연동되지 않는다. 연동 시키리면 vuex-persistedstate와 같은 기능을 써서 local Storage로 가져오는 별도의 작업이 필요하다.   
 
 ### Vuex Store 데이터를 가져오는 여러가지 방법
    
