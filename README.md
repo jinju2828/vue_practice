@@ -108,7 +108,9 @@ export default {
   }
 }
 ```
-mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있다.   
+created는 data, method, computed 속성이 정의된 상태를 말한다.   
+mounted는 초기 화면 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있다.   
+updated는 데이터 값이 변경될 때 발생한다.   
 그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
    
