@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import VuexView from '../views/VuexView.vue'
 import VuexView2 from '../views/VuexView2.vue'
 import SpreadView from '../views/SpreadView.vue'
+import PropsView from "@/views/PropsView.vue";
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/vuex2',
     name: 'vuex2',
     component: VuexView2
+  },
+  {
+    path: '/props',
+    name: 'props',
+    component: PropsView
   },
   {
     path: '/spread',

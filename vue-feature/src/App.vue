@@ -6,6 +6,7 @@
       <router-link to="/spread">spread</router-link><br>
       <router-link to="/vuex">vuex</router-link><br>
       <router-link to="/vuex2">vuex2</router-link><br>
+      <router-link to="/props">props</router-link><br>
     </nav>
     <router-view/>
   </div>

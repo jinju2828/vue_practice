@@ -58,17 +58,18 @@ v3에 대한 공식 가이드 문서이며 호환성 문제로 v3는 아직 권�
 
 1. Vue 2에는 제한된 Typescript 지원, 성능 병목 현상, 까다로운 유지 보수, 제한된 스케일링 성능 등의 단점이 있다. 
 2. Vue 3은 2020년 9월 18일 출시했으며 Vue 2 버전과 호환성이 없기 때문에 Vue 2 코드를 Vue 3 버전에서 사용하면 에러가 발생한다.   
-    
+   
+
 v3 보다는 v2를 쓰는 것이 낫다.(지극히 개인적인 주관) (2023/05/28)   
 아직은 기업들도 v2를 쓰고 v2에 대한 생태계가 더 크다.   
 v3는 생태계도 작을 뿐더러 Vuetify와 같은 Vue Component를 그려주는 Vue의 핵심 라이브러리도 v2를 쓰는 것을 더 권장하고 있다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/c7c1ef6c-c61b-4e24-926a-a5ecbe076cd0)   
-   
+
 v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.   
 2023년 기준 가장 트렌드가 강한 프론트엔드 프레임워크는 React이고 앞으로 뜰만한 프레임워크는 NextJs, Solid, Astro, svelte 등인 것을 보면 프론트엔드 시장의 다양성으로 인해 Vue 3는 영원히 주목을 못 받을 수도 있겠다.   
 더군다나 Vue 3에서의 Typecript와 Composition API 장점을 Vue 2.7에서도 사용이 가능해서 3으로 넘어갈 이유는 더더욱이 부족하다.  
 그리고 Vue 3가 나왔다고 해서 Vue 2가 업데이트를 안하는 것은 아니다. [Vue Github](https://github.com/vuejs/vue)에 들어가보면 현재 기준 2022년 11월 9일자로 2.7.14 버전이 stable 버전으로 등록되어있다.   
-   
+
 [NPM 다운로드 통계](https://www.npmjs.com/package/vue?activeTab=versions)를 확인하면 현재 가장 많이쓰고 있는 Vue 버전을 확인할 수 있다.
 
 > **Note**   
@@ -89,16 +90,16 @@ v3가 나온지는 꽤 되었지만 시장 발전속도가 굉장히 더디다.
 ## ESLint
 
 ECMAScript Lint라고 불리는 정적 분석 도구를 프로젝트 설치할 때 기본적으로 Enter만 누르다보면 같이 설치되게 되어있는데, 문법에 대해 일관성을 보장해주게 된다.   
-   
+
 ```javascript
 mounted () {
     this.count = 2
 }
 ```
-   
+
 위의 문법에서 mounted 다음에 공백이 2번 필요한데 넣어주지 않으면 ESLint에서 아래와 같은 에러를 발생시킨다.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/f10e5b0d-380b-47d6-a557-9eff4488fb67)
-   
+
 ## 생명주기 훅
 
 ```javascript
@@ -111,7 +112,7 @@ export default {
 mounted 훅은 컴포넌트가 초기 렌더링 및 DOM 노드 생성이 완료된 후 코드를 실행하는 데 사용할 수 있다.   
 그 외의 생명주기는 아래의 그림을 참고하자.   
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/a29097a2-60ed-49dc-aac1-c9c54ffae4b2)
-   
+
 ## npm start 동작 시 node 버전에 따른 이슈
 
 error:0308010C:digital envelope routines::unsupported   
@@ -137,7 +138,7 @@ npm install "라이브러리" --save
 ```
 npm 5 전에는 위처럼 --save를 붙이면 package.json 파일에 해당 라이브러리에 관한 정보가 기재되었다.
 하지만 npm 5 위로부터는 --save가 없어도 package.json 파일에 해당 라이브러리 정보가 기재되며 --save 기능이 의미가 없어졌다.
-   
+
 가장 많이 쓰는 axios를 다운받아보자.   
 ```javascript
 npm install axios
@@ -190,25 +191,25 @@ v-app 태그 없이도 하위 영역에 <v- 태그는 사용할 수 있기 때�
 vue add router를 통해 설치하면 router 폴더에 index.js가 생기며 위와 같은 코드가 존재한다.   
 라우터에 대한 샘플 코드이며 HomeView를 Import해서 해당 컴포넌트를 보여지게 하는 방법도 있으며   
 component에서 직접 import해서 AboutView를 보여지게 하는 방법도 존재한다.   
-   
+
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/6a35ae96-ec67-49d8-ba18-0034f571c58a)   
 App.vue 역시 router를 설치하면 위와 같이 수정 된다.   
-   
+
 ```javascript
 <router-link>
 ```
 태그를 통해 페이지 이동을 만드는 방법이다.  
-   
+
 ```javascript
 <router-view/>
 ```
 우리가 선택한 페이지에 컴포넌트를 렌더링 해주는 역할을 하며 없으면 페이지가 안보이게 된다.  
-   
+
 ```javascript
 this.$router.push('/pages/alerts');
 ```
 각각의 컴포넌트 내 스크립트에서 위와 같이 이동시키면 된다.   
-   
+
 위의 사진을 보면 routes 변수를 설정할 때 name이 있는데 이 name을 통한 이동도 가능하다.   
 ```javascript
 this.$router.push({ name: 'home' }); // 'home'이라는 이름을 가진 라우트로 이동
@@ -237,7 +238,7 @@ router.beforeEach((to, from, next) => {
 ## Vuex
 
 ### Vuex Store 데이터를 가져오는 여러가지 방법
-   
+
 1. 템플릿에 `this.$store.state.user`속성 바인딩   
 2. computed 속성에 `this.$store.state.user`   
 3. computed 속성에 mapState   
@@ -246,8 +247,8 @@ router.beforeEach((to, from, next) => {
 1,2는 바로 들고오는 방법이고 3,4는 기능이 같으므로 어떤 것을 선택할지는 팀의 코드 컨벤션을 생각하면서 만들면 된다.   
 최종적으로는 아래 사용법 4에 나온 방식을 쓰는 것이 확장성에 좋다.   
 
-### compute에 사용하는 이유
-   
+### computed에 사용하는 이유
+
 Store 상태 변경시 자동 업데이트, watch에 없는 캐싱 기능   
 
 ### 사용법 1
@@ -333,7 +334,7 @@ Vuex를 쓰면 Time Travel 기능을 위와 같이 개발자도구에서 이용�
 Vuex의 자세한 기능은 Vue-Feature 프로젝트 확인하면 된다.   
 
 ### Vue 데이터 및 메소드 접근   
-   
+
 Vue DevTools를 열면 컴포넌트를 선택할 수 있는데 선택하고 나면 $vm0이라는게 컴포넌트 옆에 생긴다.   
 $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.   
 
@@ -354,7 +355,7 @@ created(){
 $children과 $refs는 하위 컴포넌트에 접근하기 위해 사용되는 기능이다.   
 <input type="text" ref="textInput"> 이렇게 선언된 부분을 this.$refs.textInput.focus();와 같이 사용할 수 있다.   
 위의 코드는 단순히 id, class와 같이 선택해서 사용하는 것처럼 보이지만 주로 쓰이는 용도는 하위 컴포넌트에 ref값을 넣고 사용하는 방식이다.   
-   
+
 $refs는 렌더링 성능 문제가 발생한다.   
 왜냐면 $refs는 Vue의 반응성(Reactivity)를 무시하고 값을 수정할 수 있기 때문이다.   
 $refs를 통해 값이 수정되어도 렌더링되지 않는다.   
@@ -382,9 +383,10 @@ created(){
 외부 파일(js, vue) 파일에서 export로 내보내면 사용할 컴포넌트에서 import from “js 파일 혹은 vue 파일” 등으로 사용한다.   
 
 ### 사용법 2 - 함수, 클래스, 변수 가져오기
-export default 하면 import { } 로 가져올 때 검색이 안된다.
-export default 하려면 {}를 빼고 import 함수명 from * 으로 사용한다.
-default를 뺀 export만 할 경우에는 import { 함수명 } from * 으로 사용한다.
+export default 하면 import { } 로 가져올 때 검색이 안된다.   
+export default 하려면 {}를 빼고 import 함수명 from * 으로 사용한다.  
+default를 뺀 export만 할 경우에는 import { 함수명 } from * 으로 사용한다.        
+
 ```javascript
 function sayHi(user) {
   alert(`Hello, ${user}!`);
