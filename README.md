@@ -171,7 +171,7 @@ Vue 2에서 사용되던 Filter, Mixin, Inline Template 방식은 Vue 3에서 �
 
 ### Filter
 
-주로 데이터의 형식을 변환하거나 문자열을 포매팅하는데 사용하며 Filter를 정의하여 여러 컴포넌트에서 동일한 변환 작업을 쉽게 재사용할 수 있다.   
+주로 데이터의 형식을 변환하거나 문자열을 포맷팅하는데 사용하며 Filter를 정의하여 여러 컴포넌트에서 동일한 변환 작업을 쉽게 재사용할 수 있다.    
 Vue 3로 넘어오면서 삭제된 기능이다.   
 
 ```javascript
@@ -189,8 +189,8 @@ Vue.filter('myFilter', function(value) {
 ```
 ### Mixin
 
-공통 함수 만들어서 사용할 때 쓴다.
-Mixin은 가장 큰 단점이 Mixin 파일이 2개 이상일 때 Mixin 내부에 선언된 함수나 데이터가 이름이 같으면 겹쳐지는 현상이 발생한다.
+공통 함수 만들어서 사용할 때 쓴다.   
+Mixin은 가장 큰 단점이 Mixin 파일이 2개 이상일 때 Mixin 내부에 선언된 함수나 데이터가 이름이 같으면 겹쳐지는 현상이 발생한다.   
 Vue 3로 넘어오면서 삭제된 기능이다.   
 
 ### Mixin과 Filter를 Composition API로 구현하기
@@ -204,7 +204,7 @@ setup() {
     };
   },
 ```
-useCounter라는 js 파일을 가져와서 Mixin의 공통 함수, Filter의 포맷팅을 사용하는 방식이 더 선호된다.
+useCounter라는 js 파일을 가져와서 Mixin의 공통 함수, Filter의 포맷팅을 사용하는 방식이 더 선호된다.   
 
 ### Inline Template
 ```javascript
@@ -216,7 +216,7 @@ useCounter라는 js 파일을 가져와서 Mixin의 공통 함수, Filter의 포
 </template>
 ```
 Inline Template이란 위와 같은 코드를 말한다.   
-위의 코드는 Vue 3로 넘어와서도 사용할 수 있지만 Composition API 형태로 구현하는 아래의 방법이 더 권장되는 방식이다.
+위의 코드는 Vue 3로 넘어와서도 사용할 수 있지만 Composition API 형태로 구현하는 아래의 방법이 더 권장되는 방식이다.   
 ```javascript
 import { defineComponent } from 'vue';
 
