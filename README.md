@@ -3,7 +3,7 @@
 아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
 
 vue-feature - vue 2에 관한 기능 테스트
-vuex, v-model, v-on, v-bind, watch와 computed   
+vuex, v-model, v-on, v-bind, watch와 computed, props와 emit   
 
 vue-feature-3 - vue 3에 관한 기능 테스트
 composition, reactive reference
@@ -163,6 +163,80 @@ import axios from "axios";
 const app = createApp(App);   
 app.config.globalProperties.$axios = axios;   
 // 각각의 컴포넌트에서 import를 하지않고 this.$axios로 사용하면 된다.
+```
+
+## Filter, Mixin, Inline Template의 변화
+
+Vue 2에서 사용되던 Filter, Mixin, Inline Template 방식은 Vue 3에서 다양한 방식으로 바뀌었다.
+
+### Filter
+
+주로 데이터의 형식을 변환하거나 문자열을 포매팅하는데 사용하며 Filter를 정의하여 여러 컴포넌트에서 동일한 변환 작업을 쉽게 재사용할 수 있다.   
+Vue 3로 넘어오면서 삭제된 기능이다.   
+
+```javascript
+// 전역으로 Filter 등록
+Vue.filter('myFilter', function(value) {
+  // 필터 로직
+  return value.toUpperCase();
+});
+
+<template>
+  <div>
+    {{ data | myFilter }}
+  </div>
+</template>
+```
+### Mixin
+
+공통 함수 만들어서 사용할 때 쓴다.
+Mixin은 가장 큰 단점이 Mixin 파일이 2개 이상일 때 Mixin 내부에 선언된 함수나 데이터가 이름이 같으면 겹쳐지는 현상이 발생한다.
+Vue 3로 넘어오면서 삭제된 기능이다.   
+
+### Mixin과 Filter를 Composition API로 구현하기
+```javascript
+setup() {
+    const { count, increment } = useCounter();
+
+    return {
+      count,
+      increment,
+    };
+  },
+```
+useCounter라는 js 파일을 가져와서 Mixin의 공통 함수, Filter의 포맷팅을 사용하는 방식이 더 선호된다.
+
+### Inline Template
+```javascript
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+    <button @click="increment">Increment</button>
+  </div>
+</template>
+```
+Inline Template이란 위와 같은 코드를 말한다.   
+위의 코드는 Vue 3로 넘어와서도 사용할 수 있지만 Composition API 형태로 구현하는 아래의 방법이 더 권장되는 방식이다.
+```javascript
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  template: `
+    <div>
+      <h1>{{ message }}</h1>
+      <button @click="increment">Increment</button>
+    </div>
+  `,
+  data() {
+    return {
+      message: 'Hello, Vue 3!',
+    };
+  },
+  methods: {
+    increment() {
+      // ...
+    },
+  },
 ```
 
 ## 외부 라이브러리 추가 방법 2
@@ -409,7 +483,7 @@ import {sayHi, sayBye} from './say.js';
 ### 사용법 3 - 컴포넌트 가져오기
 ```javascript
 MyComp.vue파일에서 export default { 하면은 익명 객체로 보내는 것이고
-받는 곳에서는 해당 vue파일의 이름으로 import MyComp from ‘./MyComp.vue’; 라고 하면 <MyComp> 컴포넌트 사용 가능
+받는 곳에서는 해당 vue파일의 이름으로 import MyComp from ‘./MyComp.vue’; 라고 하면 <MyComp> 컴포넌트 사용 가능   
 ```
 
 ## 웹팩
@@ -427,6 +501,6 @@ ECMAScript를 준수하지 않는 구 버전의 브라우저에 지원해주는 
 package.json에 시작 부분에 —mode local로 설정하면 프로젝트 루트 폴더에 있는 .env.local 파일이 실행되며 전역 환경변수에 관한 부분이다.
 
 ### Vue mixin
-Vue 컴포넌트에 재사용 가능한 기능을 배포 가능.
-기존 컴포넌트에 있는 option에 추가한다는 뜻임.
+Vue 컴포넌트에 재사용 가능한 기능을 배포 가능.   
+기존 컴포넌트에 있는 option에 추가한다는 뜻임.   
 
