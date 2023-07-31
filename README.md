@@ -204,7 +204,8 @@ setup() {
     };
   },
 ```
-useCounter라는 js 파일을 가져와서 Mixin의 공통 함수, Filter의 포맷팅을 사용하는 방식이 더 선호된다.   
+Composition API는 Mixin의 공통 함수, Filter의 포맷팅 기능을 대체할 수 있다.   
+useCounter라는 js 파일을 가져와서 사용하는 방식이 Vue 3에서는 더 선호된다.   
 
 ### Inline Template
 ```javascript
