@@ -318,6 +318,8 @@ store 접근은 최초는 전부 index.js에 들어오는데 해당 파일에 mo
 
 ## store에는 왜 action이 필요할까?
 
+기본적으로 vuex의 state는 읽기 전용이다. 값을 수정하려면 mutations를 통해서 바꿔야한다.   
+
 ![image](https://github.com/stir084/Vue-Pratice/assets/47946124/88ab8af2-6fb2-4baa-ae69-2168ffef0a36)   
 vuex는 store에 있는 action을 실행시키면 dispatch(actions)를 하고 commit 메소드를 통해 mutations가 실행된다.   
 바로 mutation을 실행시키면 될 일인데 왜 commit을 할까?   
