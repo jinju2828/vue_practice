@@ -423,7 +423,9 @@ $vm0.메서드 혹은 $vm0.데이터 로 가져와서 사용할 수 있다.
 ### $options, $children, $refs
 
 #### $options
-주로 디버깅 용도로 사용된다. $options는 현재 위치하고 있는 컴포넌트의 data, methods, computed등의 컴포넌트 초기 데이터와 메소드 객체에 대해 접근이 가능하다.   
+주로 디버깅 용도로 사용된다.   
+다만 Vue 2에서는 filter.js에 전역적으로 등록된 필터 함수들을 사용할 때는 $options.filters로 가져오는 것이 일반적이다.(그래서 filter가 사라졌나보다)   
+$options는 현재 위치하고 있는 컴포넌트의 data, methods, computed등의 컴포넌트 초기 데이터와 메소드 객체에 대해 접근이 가능하다.   
 추후에 동적으로 추가되거나 변경된 데이터와 메소드는 접근이 불가능하다.   
 child 컴포넌트까지 접근하려면 this.$options(현재 컴포넌트) 가 아니라 this.$children 으로 적절하게 처리하면 된다.   
 
