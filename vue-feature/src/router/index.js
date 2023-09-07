@@ -5,6 +5,7 @@ import VuexView from '../views/VuexView.vue'
 import VuexView2 from '../views/VuexView2.vue'
 import SpreadView from '../views/SpreadView.vue'
 import PropsView from "@/views/PropsView.vue";
+import VmodelView from "@/views/VmodelView.vue";
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/vmodel',
+    name: 'vmodel',
+    component: VmodelView
   },
   {
     path: '/vuex',

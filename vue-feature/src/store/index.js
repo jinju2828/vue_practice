@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import userStore from "@/store/user/userStore";
 import createPersistedState from "vuex-persistedstate";
+import excelStore from "@/store/excel/excelStore";
 
 Vue.use(Vuex)
 
@@ -35,6 +36,7 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    user: userStore
+    user: userStore,
+    excel: excelStore
   }
 })

@@ -10,7 +10,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex'; // mapGetters, mapState는 헬퍼 함수로 지정된 이름이다.
 export default {
-  computed: {
+  computed: { // computed 기초 사용법 -> html에서 계산하면 까다로우니 아래와 같이 계산 로직을 만들어서 사용한다.
     count() { // count 직접가져오기
       return this.$store.state.count;
     },
