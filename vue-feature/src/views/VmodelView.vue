@@ -12,7 +12,7 @@
       <tbody>
       <tr v-for="(item, index) in items" :key="index"> <!-- :key는 Vue 렌더링 업데이트에 최적화 기능을 해준다.-->
         <td>
-          <input type="radio" v-model="selectedItem" :value="item"> <!--:value에 있는 값을 selectedItem에 넣어준다 selectedItem이 단일 값이라면 바로 복사가 되지만 selectedItem이 computed 대상이므로 메소드가 실행됨.-->
+          <input type="radio" v-model="selectedItem" :value="item"> <!--:value에 있는 값을 selectedItem에 넣어준다. selectedColumn.-->
         </td>
         <td>{{ item.column1 }}</td>
         <td>{{ item.column2 }}</td>
@@ -21,7 +21,8 @@
       </tbody>
     </table>
     <div>
-      선택된 아이템: {{ selectedColumn }}
+      <button v-on:click="test">test</button>
+<!--      선택된 아이템: {{ selectedColumn }}-->
     </div>
   </div>
 </template>
@@ -41,12 +42,18 @@ export default {
     };
   },
   computed: {
-    selectedColumn() { // selectedColumn은 selectedItem 값에 의존하고 있어서 해당 값이 변경될 때마다 자동 호출 된다.
+    selectedColumn() { // selectedColumn 직접 호출하지 않는 이상 호출이 안된다
+      console.log("sdfsdf")
       if (this.selectedItem) {
         return this.selectedItem.column1; // 선택된 아이템의 첫 번째 컬럼 값을 반환합니다.
       } else {
         return '선택된 아이템이 없습니다.';
       }
+    }
+  },
+  methods: {
+    test() {
+      console.log(this.selectedItem)
     }
   }
 }
