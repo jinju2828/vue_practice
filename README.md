@@ -509,6 +509,6 @@ Vue 컴포넌트에 재사용 가능한 기능을 배포 가능.
 기존 컴포넌트에 있는 option에 추가한다는 뜻임.   
 
 ### v-if, v-show
-v-if는 렌더링 유무
-v-show은 display에 대한 css 유무를 결정한다.
+v-if는 렌더링 유무   
+v-show은 display에 대한 css 유무를 결정한다.   
 컴포넌트에 v-if를 전달하지 않고 컴포넌트 내부 소스의 상단 html 태그에서 v-if를 걸면 해당 소스의 computed는 로드되기 때문에 비추천한다.
