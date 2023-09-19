@@ -1,3 +1,4 @@
+promise allSettled 정리 및 회사 Vue 메모 정리
 # Vue 기초 학습
 
 아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
