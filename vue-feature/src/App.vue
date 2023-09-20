@@ -4,6 +4,7 @@
       <router-link to="/">v-model</router-link><br>
       <router-link to="/vmodel">v-model practice</router-link><br>
       <router-link to="/vmodel2">v-model move item</router-link><br>
+      <router-link to="/parelell">parelell view</router-link><br>
       <router-link to="/force-update">force update example</router-link><br>
       <router-link to="/about">watch & computed</router-link><br>
       <router-link to="/spread">spread</router-link><br>

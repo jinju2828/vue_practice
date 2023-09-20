@@ -8,6 +8,7 @@ import PropsView from "@/views/PropsView.vue";
 import VmodelView from "@/views/VmodelView.vue";
 import VmodelView2 from "@/views/VmodelView2.vue";
 import ForceUpdateView from "@/views/ForceUpdateView.vue";
+import ParelellView from "@/views/ParelellView.vue";
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/vmodel2',
     name: 'vmodel2',
     component: VmodelView2
+  },
+  {
+    path: '/parelell',
+    name: 'parelell',
+    component: ParelellView
   },
   {
     path: '/force-update',
