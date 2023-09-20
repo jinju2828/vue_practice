@@ -1,25 +1,20 @@
 <template>
   <div>
-    <table>
-      <thead>
-      <tr>
-        <th>라디오 박스 컬럼</th>
-        <th>데이터 컬럼 1</th>
-        <th>데이터 컬럼 2</th>
-        필요한 만큼 데이터 컬럼을 추가하세요.
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(item, index) in items" :key="index"> <!-- :key는 Vue 렌더링 업데이트에 최적화 기능을 해준다.-->
-        <td>
-          <input type="radio" v-model="selectedItem" :value="item"> <!--:value에 있는 값을 selectedItem에 넣어준다. selectedColumn.-->
-        </td>
-        <td>{{ item.column1 }}</td>
-        <td>{{ item.column2 }}</td>
-        필요한 만큼 데이터 컬럼 값을 출력하세요.
-      </tr>
-      </tbody>
-    </table>
+    Promise all<br/>
+    입력된 모든게 성공 상태여야 이행한다.<br/>
+    첫번째 실패한 경우 그 이후것도 전부 에러 처리한다.<br/>
+    모든 프로미스가 성공적이행인경우 결과값을 배열로 반환한다.<br/>
+    <br/>
+    Promise allSettled<br/>
+    이건 입력된 모든게 어떤것이든 상관없이 이행한다.<br/>
+    모든 프로미스의 성공 실패를 전부 반환해준다.<br/>
+    <br/>
+    axios All<br/>
+    얘도 하나라도 싪패시 끝난다<br/>
+    <br/>
+    결과적으로 axios all과 promise all의 차이는 없다.<br/>
+    allSettled를 선호하자<br/>
+
     <div>
       <button v-on:click="test">test</button>
       <button v-on:click="test2">test2</button>
@@ -31,6 +26,8 @@
 <script>
 // @ is an alias to /src
 import axios from "axios";
+
+
 
 export default {
   data() {
