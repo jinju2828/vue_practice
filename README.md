@@ -1,9 +1,10 @@
+TODO: slot
 # Vue 기초 학습
 
 아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
 
 vue-feature - vue 2에 관한 기능 테스트
-vuex, Async, v-model, v-on, v-bind, watch와 computed, props와 emit   
+vuex, Async, v-model, v-on, v-bind, watch와 computed, props와 emit, parellel promise
 
 vue-feature-3 - vue 3에 관한 기능 테스트
 composition, reactive reference
