@@ -1,4 +1,14 @@
-TODO: slot
+TODO: slot   
+
+slot이란 부모가 되는 컴포넌트쪽에서 자식 컴포넌트의 템플렛의 일부를 삽입하는 기능이다. 참고로, Vue.js Version2.5 이후는 slot-scope, Version 2.6이후는 slot-scope와 v-slot이 준비되어 있다. 
+<template>
+  <div class="mycom">
+   <p>name:<slot>Mirai Taro</slot></p>
+  </div>
+</template>
+<style>
+</style>
+ 
 # Vue 기초 학습
 
 아래 내용은 Vue 기초 학습 및 시행착오를 겪을만한 내용을 적어놨습니다.   
