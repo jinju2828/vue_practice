@@ -9,6 +9,7 @@ import VmodelView from "@/views/VmodelView.vue";
 import VmodelView2 from "@/views/VmodelView2.vue";
 import ForceUpdateView from "@/views/ForceUpdateView.vue";
 import ParelellView from "@/views/ParelellView.vue";
+import ComputedVmodelView from "@/views/ComputedVmodelView.vue";
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/vuex2',
     name: 'vuex2',
     component: VuexView2
+  },
+  {
+    path: '/computeandvmodel',
+    name: 'computeandvmodel',
+    component: ComputedVmodelView
   },
   {
     path: '/props',
