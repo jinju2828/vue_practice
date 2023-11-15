@@ -19,7 +19,9 @@
 </template>
 <script>
 export default {
-  data() {
+  /*data() {
+    return {*/
+  data: function() {
     return {
       firstName: 'Foo',
       lastName: 'Bar',
@@ -48,6 +50,7 @@ export default {
       // 위의 두개는 전부 unexpected Side Effect + no-side-effects-in-computed-properties 에러가 발생한다.
       // computed에서는 외부 객체를 수정해서는 안된다. this.myArray[1] + "dfdf" 이런 형태 말고는 불가능하다는 뜻.
       // 즉 다시 말해 computed는 함수형 프로그래밍을 지향한다.
+      // 근데 또 여기서 $set은 에러가 안나기 때문에 이거 지양하는게 좋음
       return this.myArray[1];
     },
     /*totalCount() {
@@ -68,7 +71,7 @@ export default {
         id: 5, name: 'dfdf'
       };
       // 배열 수정은 렌더링이 안된다.
-      this.myArray[0].id = 4;
+      //this.myArray[0].id = 4;
       // 객체 수정
       // 객체 수정은 렌더링이 된다.
       // 다만, 다시 렌더링 된 것(즉 위 배열 수정으로 다시 초기화 해버린다거나 하는 경우)에 대해 간접 수정한 것은 당연히 수정이 안된다.
