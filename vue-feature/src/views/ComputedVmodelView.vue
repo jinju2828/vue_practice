@@ -64,9 +64,9 @@ export default {
   methods: {
     updateObject() {
       // 배열 수정
-      /*this.myArray[0] = {
+      this.myArray[0] = {
         id: 5, name: 'dfdf'
-      };*/
+      };
       // 배열 수정은 렌더링이 안된다.
       this.myArray[0].id = 4;
       // 객체 수정
