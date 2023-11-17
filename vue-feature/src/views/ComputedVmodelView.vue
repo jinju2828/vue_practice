@@ -67,6 +67,7 @@ export default {
   methods: {
     updateObject() {
       // 배열 수정
+
       this.myArray[0] = {
         id: 5, name: 'dfdf'
       };

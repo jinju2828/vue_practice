@@ -11,7 +11,8 @@
       <router-link to="/vuex">vuex</router-link><br>
       <router-link to="/vuex2">vuex2</router-link><br>
       <router-link to="/props">props</router-link><br>
-      <router-link to="/computeandvmodel">computeandvmodel</router-link>
+      <router-link to="/computeandvmodel">computeandvmodel</router-link><br>
+      <router-link to="/parent">slot-parent</router-link>
     </nav>
     <router-view/>
   </div>

@@ -10,6 +10,7 @@ import VmodelView2 from "@/views/VmodelView2.vue";
 import ForceUpdateView from "@/views/ForceUpdateView.vue";
 import ParelellView from "@/views/ParelellView.vue";
 import ComputedVmodelView from "@/views/ComputedVmodelView.vue";
+import ParentComponentView from "@/views/slot/ParentComponent.vue";
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,11 @@ const routes = [
     path: '/spread',
     name: 'spread',
     component: SpreadView
+  },
+  {
+    path: '/parent',
+    name: 'parent',
+    component: ParentComponentView
   },
   {
     path: '/about',
