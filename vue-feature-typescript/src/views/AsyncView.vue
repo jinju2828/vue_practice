@@ -9,6 +9,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+
 import { ref } from "vue";
 
 //일반 함수
